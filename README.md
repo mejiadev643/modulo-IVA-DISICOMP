@@ -1,4 +1,4 @@
 # modulo-IVA-DISICOMP
 integrantes
-Cristian Mejia
+Cristian Mejia (XD)
 Gerardo Rodriguez
