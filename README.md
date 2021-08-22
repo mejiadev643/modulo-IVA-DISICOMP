@@ -1,4 +1,4 @@
 # modulo-IVA-DISICOMP
 integrantes
 Cristian Mejia (XD)
-Gerardo Rodriguez
+Gerardo Rodriguez (XD2)
