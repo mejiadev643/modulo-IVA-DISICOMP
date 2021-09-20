@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-09-2021 a las 16:56:04
+-- Tiempo de generación: 21-09-2021 a las 01:31:25
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 7.4.22
 
@@ -29,7 +29,7 @@ USE `ComunDC`;
 -- Estructura de tabla para la tabla `Clientes`
 --
 
-CREATE TABLE `Clientes` (
+CREATE TABLE IF NOT EXISTS `Clientes` (
   `CODCLIENT` varchar(14) NOT NULL,
   `NOMBCLIENT` varchar(60) NOT NULL,
   `DENOMCLIENT` varchar(40) NOT NULL,
@@ -82,10 +82,25 @@ CREATE TABLE `Clientes` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `Login`
+--
+
+CREATE TABLE IF NOT EXISTS `Login` (
+  `NOMBRE` varchar(50) NOT NULL,
+  `USERID` varchar(10) NOT NULL,
+  `PASSWORD` varchar(10) NOT NULL,
+  `CARGO` varchar(50) NOT NULL,
+  `SISTEMA` int(2) NOT NULL,
+  `EMPRESA` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `Tiposdeventa`
 --
 
-CREATE TABLE `Tiposdeventa` (
+CREATE TABLE IF NOT EXISTS `Tiposdeventa` (
   `CODIGO` varchar(2) NOT NULL,
   `NOMBRE` varchar(40) NOT NULL,
   `SIGLAS` varchar(3) NOT NULL
@@ -104,7 +119,7 @@ INSERT INTO `Tiposdeventa` (`CODIGO`, `NOMBRE`, `SIGLAS`) VALUES
 -- Estructura de tabla para la tabla `TransacIva`
 --
 
-CREATE TABLE `TransacIva` (
+CREATE TABLE IF NOT EXISTS `TransacIva` (
   `CODTRAN` varchar(2) NOT NULL,
   `NOMBRE` varchar(35) NOT NULL,
   `SIGNO` varchar(1) NOT NULL,
