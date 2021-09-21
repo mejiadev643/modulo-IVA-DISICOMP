@@ -1,0 +1,131 @@
+/* Variables css, para contener los colores */
+:root{
+	--primary:  #115ba6;
+	--secondary:  #03a13d;
+}
+
+/* Para no tener poblemas con el modelo de caja */
+*{
+	box-sizing: border-box;
+}
+
+/* Centralizar todo el contenido */
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+	background: url(../img/fondo.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+/* Agregamos un color de fondo */
+.login{
+	background: #efefef;
+	width: 300px;
+	border-radius: 5px;
+}
+
+/* 	Insertamos la imagen */
+.image{
+	color: #ffffff;
+	background: url(../img/img.png);
+	height: 170px;
+	background-size: cover;
+	background-position: center -15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+	position: relative;
+}
+
+/* Desgradar el tono de la imagen */
+.image:before{
+	content: "";
+	background: rgba(99, 99, 99, 0.40);
+	position: absolute;
+	width: 300px;
+	height: 170px;
+}
+
+.inicio{
+	color: #ffffff;
+}
+
+i{
+	color: #ffffff;
+}
+
+/* Recobrar el tono de las letras y el icono */
+.inicio,i{
+	position: relative;
+}
+
+/* Restructurar el formulario */
+
+.formulario_login{
+	height: 230px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 0px 15px;
+}
+
+/* Agregar el color primario a los icons */
+label, span{
+	color: var(--primary);
+}
+
+/* Reacomodando los iconos */
+
+.form-icon{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+span{
+	position: absolute;
+	bottom: 10px;
+	left: 7px;
+	transition: 0.2s all ease;
+}
+
+input{
+	padding: 7px 7px 7px 25px;
+	background: transparent;
+	border: 0px;
+	border-bottom: 2px solid var(--primary);
+	outline: none;
+}
+
+/* Mejorar la estructura a la hora de digitar los datos */
+input:focus{
+	border-bottom: 2px solid var(--secondary);
+	color: #000000;
+	transition: 0.2s all ease;
+}
+
+input:focus + span{
+	color: var(--secondary);
+}
+
+/* Estilo del boton */
+button{
+	background: var(--primary);
+	color: #ffffff;
+	padding: 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.3s all ease;
+}
+
+/* Trancisión del boton */
+button:hover{
+	background: var(--secondary);
+}
+
