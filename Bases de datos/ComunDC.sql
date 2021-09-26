@@ -30,53 +30,53 @@ USE `ComunDC`;
 --
 
 CREATE TABLE IF NOT EXISTS `Clientes` (
-  `CODCLIENT` varchar(14) NOT NULL,
-  `NOMBCLIENT` varchar(60) NOT NULL,
-  `DENOMCLIENT` varchar(40) NOT NULL,
-  `REGCLIENT` varchar(15) NOT NULL,
-  `GIRONEG` varchar(100) NOT NULL,
-  `NUMNIT` varchar(14) NOT NULL,
-  `TELEFONO` varchar(10) NOT NULL,
-  `DIRNEG` varchar(100) NOT NULL,
-  `CIUDAD` varchar(25) NOT NULL,
-  `DEPTO` varchar(15) NOT NULL,
-  `RESNEGO` varchar(40) NOT NULL,
-  `TFRESPON` varchar(19) NOT NULL,
-  `TIPOCLIENT` varchar(1) NOT NULL,
-  `CLASECLIENT` varchar(1) NOT NULL,
-  `TIPODOCUCRFCOF` varchar(1) NOT NULL,
-  `VENDEDOR` varchar(5) NOT NULL,
-  `COBRADOR` varchar(5) NOT NULL,
-  `ZONA` varchar(5) NOT NULL,
-  `NOMBRENIT` varchar(60) NOT NULL,
-  `CORREOELECT` varchar(80) NOT NULL,
-  `NACIONALIDAD` varchar(1) NOT NULL,
-  `FECHACREACION` date NOT NULL,
-  `GRANCONTRIB` varchar(1) NOT NULL,
-  `RETENCIONIVA` varchar(1) NOT NULL,
-  `IMPORTADOR` varchar(1) NOT NULL,
-  `TIPOCOMPRA` varchar(1) NOT NULL,
-  `LIMITECREDITO` decimal(10,2) NOT NULL,
-  `DIASCREDITO` varchar(3) NOT NULL,
-  `DIAVISITA` varchar(10) NOT NULL,
-  `CLASIFICACIONCOMPRA` varchar(1) NOT NULL,
-  `GRUPOCLIENTE` varchar(4) NOT NULL,
-  `CTACARGADA` varchar(15) NOT NULL,
-  `CTAABONADA` varchar(15) NOT NULL,
+  `CODCLIENT` varchar(14) DEFAULT NULL,
+  `NOMBCLIENT` varchar(60) DEFAULT NULL,
+  `DENOMCLIENT` varchar(40) DEFAULT NULL,
+  `REGCLIENT` varchar(15) DEFAULT NULL,
+  `GIRONEG` varchar(100) DEFAULT NULL,
+  `NUMNIT` varchar(14) DEFAULT NULL,
+  `TELEFONO` varchar(10) DEFAULT NULL,
+  `DIRNEG` varchar(100) DEFAULT NULL,
+  `CIUDAD` varchar(25) DEFAULT NULL,
+  `DEPTO` varchar(15) DEFAULT NULL,
+  `RESNEGO` varchar(40) DEFAULT NULL,
+  `TFRESPON` varchar(19) DEFAULT NULL,
+  `TIPOCLIENT` varchar(1) DEFAULT NULL,
+  `CLASECLIENT` varchar(1) DEFAULT NULL,
+  `TIPODOCUCRFCOF` varchar(1) DEFAULT NULL,
+  `VENDEDOR` varchar(5) DEFAULT NULL,
+  `COBRADOR` varchar(5) DEFAULT NULL,
+  `ZONA` varchar(5) DEFAULT NULL,
+  `NOMBRENIT` varchar(60) DEFAULT NULL,
+  `CORREOELECT` varchar(80) DEFAULT NULL,
+  `NACIONALIDAD` varchar(1) DEFAULT NULL,
+  `FECHACREACION` date DEFAULT NULL,
+  `GRANCONTRIB` varchar(1) DEFAULT NULL,
+  `RETENCIONIVA` varchar(1) DEFAULT NULL,
+  `IMPORTADOR` varchar(1) DEFAULT NULL,
+  `TIPOCOMPRA` varchar(1) DEFAULT NULL,
+  `LIMITECREDITO` decimal(10,2) DEFAULT NULL,
+  `DIASCREDITO` varchar(3) DEFAULT NULL,
+  `DIAVISITA` varchar(10) DEFAULT NULL,
+  `CLASIFICACIONCOMPRA` varchar(1) DEFAULT NULL,
+  `GRUPOCLIENTE` varchar(4) DEFAULT NULL,
+  `CTACARGADA` varchar(15) DEFAULT NULL,
+  `CTAABONADA` varchar(15) DEFAULT NULL,
   `ESTADO` varchar(1) DEFAULT NULL,
-  `NUMSERIE` varchar(10) NOT NULL,
-  `DOCUNICO` varchar(10) NOT NULL,
-  `DESCUENTO` decimal(10,2) NOT NULL,
-  `NUMERODUI` varchar(11) NOT NULL,
-  `USUARIO` varchar(10) NOT NULL,
-  `FECHAOPE` date NOT NULL,
-  `MAQUINA` varchar(10) NOT NULL,
-  `HORA` varchar(10) NOT NULL,
-  `GRADO` varchar(10) NOT NULL,
-  `NOMGRADO` varchar(10) NOT NULL,
-  `SECCION` varchar(10) NOT NULL,
-  `CENCOS` varchar(6) NOT NULL,
-  `MATRICULA` varchar(10) NOT NULL
+  `NUMSERIE` varchar(10) DEFAULT NULL,
+  `DOCUNICO` varchar(10) DEFAULT NULL,
+  `DESCUENTO` decimal(10,2) DEFAULT NULL,
+  `NUMERODUI` varchar(11) DEFAULT NULL,
+  `USUARIO` varchar(10) DEFAULT NULL,
+  `FECHAOPE` date DEFAULT NULL,
+  `MAQUINA` varchar(10) DEFAULT NULL,
+  `HORA` varchar(10) DEFAULT NULL,
+  `GRADO` varchar(10) DEFAULT NULL,
+  `NOMGRADO` varchar(10) DEFAULT NULL,
+  `SECCION` varchar(10) DEFAULT NULL,
+  `CENCOS` varchar(6) DEFAULT NULL,
+  `MATRICULA` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -86,12 +86,12 @@ CREATE TABLE IF NOT EXISTS `Clientes` (
 --
 
 CREATE TABLE IF NOT EXISTS `Login` (
-  `NOMBRE` varchar(50) NOT NULL,
-  `USERID` varchar(10) NOT NULL,
-  `PASSWORD` varchar(10) NOT NULL,
-  `CARGO` varchar(50) NOT NULL,
-  `SISTEMA` int(2) NOT NULL,
-  `EMPRESA` varchar(10) NOT NULL
+  `NOMBRE` varchar(50) DEFAULT NULL,
+  `USERID` varchar(10) DEFAULT NULL,
+  `PASSWORD` varchar(10) DEFAULT NULL,
+  `CARGO` varchar(50) DEFAULT NULL,
+  `SISTEMA` int(2) DEFAULT NULL,
+  `EMPRESA` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -101,9 +101,9 @@ CREATE TABLE IF NOT EXISTS `Login` (
 --
 
 CREATE TABLE IF NOT EXISTS `Tiposdeventa` (
-  `CODIGO` varchar(2) NOT NULL,
-  `NOMBRE` varchar(40) NOT NULL,
-  `SIGLAS` varchar(3) NOT NULL
+  `CODIGO` varchar(2) DEFAULT NULL,
+  `NOMBRE` varchar(40) DEFAULT NULL,
+  `SIGLAS` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -120,12 +120,12 @@ INSERT INTO `Tiposdeventa` (`CODIGO`, `NOMBRE`, `SIGLAS`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `TransacIva` (
-  `CODTRAN` varchar(2) NOT NULL,
-  `NOMBRE` varchar(35) NOT NULL,
-  `SIGNO` varchar(1) NOT NULL,
-  `SINOIVA` varchar(1) NOT NULL,
-  `CUENTAA` varchar(15) NOT NULL,
-  `CUENTAC` varchar(15) NOT NULL
+  `CODTRAN` varchar(2) DEFAULT NULL,
+  `NOMBRE` varchar(35) DEFAULT NULL,
+  `SIGNO` varchar(1) DEFAULT NULL,
+  `SINOIVA` varchar(1) DEFAULT NULL,
+  `CUENTAA` varchar(15) DEFAULT NULL,
+  `CUENTAC` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 
