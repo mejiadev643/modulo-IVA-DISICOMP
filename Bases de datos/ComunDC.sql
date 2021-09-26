@@ -106,13 +106,6 @@ CREATE TABLE IF NOT EXISTS `Tiposdeventa` (
   `SIGLAS` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `Tiposdeventa`
---
-
-INSERT INTO `Tiposdeventa` (`CODIGO`, `NOMBRE`, `SIGLAS`) VALUES
-('01', 'prueba ', 'p');
-
 -- --------------------------------------------------------
 
 --
@@ -126,6 +119,43 @@ CREATE TABLE IF NOT EXISTS `TransacIva` (
   `SINOIVA` varchar(1) DEFAULT NULL,
   `CUENTAA` varchar(15) DEFAULT NULL,
   `CUENTAC` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Empresa`
+--
+
+CREATE TABLE IF NOT EXISTS`Empresa` (
+  `CODIGO` varchar(2) DEFAULT NULL,
+  `NOMBRE` varchar(80) DEFAULT NULL,
+  `DENOMINA` varchar(80) DEFAULT NULL,
+  `TELEYCAJA` varchar(80) DEFAULT NULL,
+  `REGISTRO` varchar(10) DEFAULT NULL,
+  `NIT` varchar(18) DEFAULT NULL,
+  `GIRO` varchar(60) DEFAULT NULL,
+  `DIRECCION` varchar(100) DEFAULT NULL,
+  `RUTA` varchar(120) DEFAULT NULL,
+  `TITULO` varchar(60) DEFAULT NULL,
+  `RUTAVTA` varchar(80) DEFAULT NULL,
+  `PATHR` text DEFAULT NULL,
+  `TRACONCOST` varchar(1) DEFAULT NULL,
+  `TIPOCAMBIO` decimal(10,4) DEFAULT NULL,
+  `PRECONIVA` varchar(1) DEFAULT NULL,
+  `ACTIVADO` varchar(1) DEFAULT NULL,
+  `RUTADESA` text DEFAULT NULL,
+  `VERICC` varchar(1) DEFAULT NULL,
+  `RUTAINVE` text DEFAULT NULL,
+  `PORIVA` decimal(5,2) DEFAULT NULL,
+  `BACKUPS` text DEFAULT NULL,
+  `ACTIVA1` varchar(1) DEFAULT NULL,
+  `ACTIVA2` varchar(1) DEFAULT NULL,
+  `GRANDE` varchar(1) DEFAULT NULL,
+  `MULTISUCU` varchar(1) DEFAULT NULL,
+  `CONTADOR` varchar(50) DEFAULT NULL,
+  `SIFACTURA` varchar(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 
