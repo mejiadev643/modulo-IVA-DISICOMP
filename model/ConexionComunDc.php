@@ -1,5 +1,5 @@
 <?php
-	class Conexion
+	class ConexionComunDc
 	{
 	    public static function Conectar()
 	    {

@@ -1,5 +1,5 @@
 <?php
-require_once 'model/Conexion.php';  
+require_once 'model/ConexionComunDc.php';  
 
   $controller = 'login';
 

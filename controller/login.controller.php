@@ -39,9 +39,10 @@ class LoginController{
             #tomar los valores es variables de sesión
             session_start();
             $_SESSION["NOMBRE"] = $usuario->NOMBRE;
+            $_SESSION["USERID"] = $usuario->USERID;
+            $_SESSION["EMPRESA"] = $usuario->EMPRESA;
             # entrar
-            echo "Exito";
-            // header('Location: index.php?c=Principal&a=Index');
+             header('Location: index.php?c=Principal&a=Index');
         } else {
             # enviar al login
             header('Location: index.php?c=Login&a=Index');
