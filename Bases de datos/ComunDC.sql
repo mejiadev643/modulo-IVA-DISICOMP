@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `Login` (
   `IDLOGIN` int(11) NOT NULL AUTO_INCREMENT,
   `NOMBRE` varchar(50) NOT NULL,
   `USERID` varchar(10) NOT NULL,
-  `PASSWORD` varchar(33) NOT NULL,
+  `PASS` varchar(33) NOT NULL,
   `CARGO` varchar(50) NOT NULL,
   `SISTEMA` int(2) NOT NULL,
   `EMPRESA` varchar(10) NOT NULL,
