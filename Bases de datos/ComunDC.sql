@@ -166,7 +166,9 @@ CREATE TABLE IF NOT EXISTS `Tiposdeventa` (
 --
 
 INSERT INTO `Tiposdeventa` (`IDCODIGO`, `CODIGO`, `NOMBRE`, `SIGLAS`) VALUES
-(1, '01', 'prueba ', 'p');
+(1, '1', 'consumidor final', 'cof'),
+(2, '2', 'credito fiscal', 'crf'),
+(3, '3', 'factura de exportación', 'ex');
 
 -- --------------------------------------------------------
 
