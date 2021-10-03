@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `Login` (
 -- Volcado de datos para la tabla `Login`
 --
 
-INSERT INTO `Login` (`IDLOGIN`, `NOMBRE`, `USERID`, `PASSWORD`, `CARGO`, `SISTEMA`, `EMPRESA`) VALUES
+INSERT INTO `Login` (`IDLOGIN`, `NOMBRE`, `USERID`, `PASS`, `CARGO`, `SISTEMA`, `EMPRESA`) VALUES
 (1, 'Cristian mejia', 'MejiaDev', '0fb102e89cd0730f0f322b5d6a6eda82', 'Presi', 10, 'papajhons');
 
 -- --------------------------------------------------------
