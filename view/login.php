@@ -9,6 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="materializecss/css/material-design-iconic-font.css">
     <link rel="stylesheet" href="materializecss/css/normalize.css">
     <link rel="stylesheet" href="materializecss/css/style.css">
