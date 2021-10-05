@@ -10,6 +10,8 @@ class Usuario
     public $sistema;
     public $empresa;
 
+	private $confirm;
+
 	public function __CONSTRUCT()
 	{
 		try
@@ -76,6 +78,28 @@ class Usuario
 		}
 
 
+	}
+
+	public function usuarioReg($data){
+
+		#echo "$data->userid";
+		try {
+			$stm = $this->pdo
+			          ->prepare("SELECT * FROM Login WHERE USERID = ? ");			          
+
+			$stm->execute(array($data->userid));
+			
+			/*$confirm = $stm->fetch(PDO::FETCH_OBJ);
+
+			if (empty((array)$confirm)) {
+				echo "vacio";
+			}else{
+				echo "lleno";
+			}*/
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (\Throwable $th) {
+			//throw $th;
+		}
 	}
 	public function listarUsuarios()
 	{

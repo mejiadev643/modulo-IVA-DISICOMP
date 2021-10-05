@@ -54,13 +54,34 @@ class UsuarioController{
         $usuario->userid = $_REQUEST['userid'];
         $usuario->pass = $_REQUEST['pass'];
 
-        //si el id es mayor que cero Actualiza si no registra
-        $usuario->idlogin > 0 
-            ? $this->model->modificarUsuario($usuario)
-            : $this->model->guardarUsuario($usuario);
+        $conf=$usuario->usuarioReg($usuario);//confirmacion de usuario
         
-        // //redirecciona a la vista de consultar usuario
-         header('Location: index.php?c=Usuario&a=Consultar');
+        if (empty((array)$conf)) {
+            #echo "vacio";
+            //si el id es mayor que cero Actualiza si no registra
+            $usuario->idlogin > 0 
+                ? $this->model->modificarUsuario($usuario)
+                : $this->model->guardarUsuario($usuario);
+            //redirecciona a la vista de consultar usuario
+            header('Location: index.php?c=Usuario&a=Consultar');
+        }else{
+            
+            $BadUser=["login"=>$usuario->idlogin,
+                        "nombre"=>$usuario->nombre,
+                        "cargo"=>$usuario->cargo,
+                        "sistema"=>$usuario->sistema,
+                        "empresa"=>$usuario->empresa,
+                        "pass"=>$usuario->pass,
+                        "error"=>"ID de usuario existe"];
+            #echo $BadUser["nombre"];
+
+        //llama todas las partes de la vista para guardar        
+        require_once 'view/admin/header.php';
+        require_once 'view/admin/notifications.php';
+        require_once 'view/admin/navLateral.php';
+        require_once 'view/admin/registro-usuario.php';
+        }
+    
     }
 
     public function Consultar(){
