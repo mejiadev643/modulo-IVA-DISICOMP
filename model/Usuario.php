@@ -89,13 +89,17 @@ class Usuario
 
 			$stm->execute(array($data->userid));
 			
-			/*$confirm = $stm->fetch(PDO::FETCH_OBJ);
+			#$confirm = $stm->fetch(PDO::FETCH_OBJ);
 
-			if (empty((array)$confirm)) {
+			#var_dump($confirm);
+			#echo empty($confirm);
+
+			/*if(empty($confirm)==1){//confirma que esta vacio (true)
 				echo "vacio";
-			}else{
-				echo "lleno";
+			}else {
+				echo"lleno";
 			}*/
+
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (\Throwable $th) {
 			//throw $th;

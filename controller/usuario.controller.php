@@ -56,7 +56,7 @@ class UsuarioController{
 
         $conf=$usuario->usuarioReg($usuario);//confirmacion de usuario
         
-        if (empty((array)$conf)) {
+        if (empty($conf) == 1) { //si se encuentra vacio se procede a guardar.
             #echo "vacio";
             //si el id es mayor que cero Actualiza si no registra
             $usuario->idlogin > 0 
@@ -64,7 +64,7 @@ class UsuarioController{
                 : $this->model->guardarUsuario($usuario);
             //redirecciona a la vista de consultar usuario
             header('Location: index.php?c=Usuario&a=Consultar');
-        }else{
+        }else{ //si esta lleno el array se procede a enviar datos de regreso
             
             $BadUser=["login"=>$usuario->idlogin,
                         "nombre"=>$usuario->nombre,
