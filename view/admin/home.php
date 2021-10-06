@@ -7,8 +7,15 @@
             <article class="full-width tile">
                 <a href="?c=Usuario&a=Crud">
                     <div class="tile-text">
+                        <?php
+                        $ctadmin=0;
+                        foreach ($this->admin->listarUsuarios() as $r){
+                            $ctadmin++;
+                        }
+                        
+                        ?>
                         <span class="text-condensedLight">
-						    1<br>
+						    <?php echo $ctadmin; ?><br>
 						    <small>Administradores</small>
 					    </span>
                     </div>
