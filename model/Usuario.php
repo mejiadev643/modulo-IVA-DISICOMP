@@ -151,22 +151,37 @@ class Usuario
 	}
 
 	public function modificarUsuario($data){
+		#var_dump($data);
 
-		try {//no hace falta explicar, se ace un update con el IDLOGIN que esta en la base de datos.
-			$stm = $this->pdo->prepare("UPDATE Login SET NOMBRE=?, USERID=?, PASS=?,CARGO=?, SISTEMA=?, EMPRESA=? WHERE IDLOGIN=?;");
-			$stm->execute($data->nombre,
+		try {//no hace falta explicar, se hace un update con el IDLOGIN que esta en la base de datos.
+			$stm = $this->pdo->prepare("UPDATE Login SET NOMBRE=?, USERID=?, PASS=?, CARGO=?, SISTEMA=?, EMPRESA=? WHERE IDLOGIN=?;");
+			$stm->execute(array($data->nombre,
 							$data->userid,
 							$data->pass,
 							$data->cargo,
 							$data->sistema,
 							$data->empresa,
-							$data->idlogin,);
+							$data->idlogin));
+			
 
 			
 		} catch (\Throwable $th) {
-			//throw $th;
+		 echo $th;
 		}
 
+	}
+
+	public function eliminarUsuario($data){
+		
+		#echo $data->idlogin;
+
+		try {
+			$stm = $this->pdo->prepare("DELETE FROM Login WHERE IDLOGIN = ?;");
+			$stm->execute(array($data->idlogin));
+
+		} catch (\Throwable $th) {
+			echo $th;
+		}
 	}
 
 

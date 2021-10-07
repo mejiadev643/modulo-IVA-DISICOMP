@@ -66,7 +66,7 @@
 												<i class="zmdi zmdi-edit"></i>
 											</button>
 										</a>
-											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab  mdl-button--accent" id="eliminar<?php echo $r->IDLOGIN; ?>" type="button"  name="eliminar" style="display:none;">
+											<button onclick= elimina('<?php echo base64_encode($r->IDLOGIN); ?>') class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab  mdl-button--accent" id="eliminar<?php echo $r->IDLOGIN; ?>" type="button"   name="eliminar" style="display:none;">
 												<i class="zmdi zmdi-delete"></i>
 											</button>
 									</p>
@@ -106,6 +106,12 @@
 				eliminar.setAttribute("style","display:none;");
 			}
 			
+		}
+		function elimina(id){
+			let con = confirm("Desea eliminar el elemento? Una vez eliminado no podra recuperarlo");
+			if (con == true){
+				window.location= "?c=Usuario&a=eliminar&usr="+id ;
+			}
 		}
 	</script>
 </body>

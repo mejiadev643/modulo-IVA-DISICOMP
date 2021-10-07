@@ -58,7 +58,7 @@ class UsuarioController{
 
         $conf=$usuario->usuarioReg($usuario);//confirmacion de usuario
         
-        if (empty($conf) == 1 or $usuario->idlogin > 0) { /*si se encuentra vacio o el atributo idlogin esta lleno se procede a guardar.
+        if (empty($conf) == true or $usuario->idlogin > 0) { /*si se encuentra vacio o el atributo idlogin esta lleno se procede a guardar.
             en este caso pregunte si el array $conf estaba vacio y me tirara que no, pero el idlogin esta lleno
             asi que:  0 or 1 = 1
             pasara al else solo si empty es 0 y el idlogin no este lleno
@@ -66,6 +66,7 @@ class UsuarioController{
             */
             #echo "vacio";
             //si el id es mayor que cero Actualiza si no registra
+            #echo $usuario->idlogin;
             $usuario->idlogin > 0 
                 ? $this->model->modificarUsuario($usuario)
                 : $this->model->guardarUsuario($usuario);
@@ -78,6 +79,7 @@ class UsuarioController{
                         "cargo"=>$usuario->cargo,
                         "sistema"=>$usuario->sistema,
                         "empresa"=>$usuario->empresa,
+                        "userid"=>$usuario->userid,
                         "pass"=>$usuario->pass,
                         "error"=>"ID de usuario existe"];
             #echo $BadUser["nombre"];
@@ -97,6 +99,21 @@ class UsuarioController{
         require_once 'view/admin/notifications.php';
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/consultar-usuario.php';
+    }
+
+    public function Eliminar(){
+        $usuario = new Usuario();
+        
+        //captura todos los datos
+        $usuario->idlogin = base64_decode($_REQUEST['usr']);
+
+        #var_dump($usuario);
+        $this->model->eliminarUsuario($usuario);
+
+        header("Location:?c=Usuario&a=Consultar");
+
+        
+
     }
 
 
