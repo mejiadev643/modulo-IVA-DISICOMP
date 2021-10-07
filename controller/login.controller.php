@@ -26,7 +26,6 @@ class LoginController{
 
     public function Entrar(){
         $usuario = new Usuario();
-        
         //captura todos los datos
         $userid = $_REQUEST['userid'];
         $password = $_REQUEST['clave'];
@@ -44,8 +43,12 @@ class LoginController{
             # entrar
              header('Location: index.php?c=Principal&a=Index');
         } else {
+            $error = ["usuario"=>$userid, "clave"=>$password,"mensaje"=>"<div class='alert alert-danger' role='alert'>
+            Usuario o contraseña incorrectos
+          </div>"];
+            require_once 'view/login.php';
             # enviar al login
-            header('Location: index.php?c=Login&a=Index');
+            #header('Location: index.php?c=Login&a=Index');
         }
         
         

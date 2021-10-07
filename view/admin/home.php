@@ -5,13 +5,22 @@
             <h3 class="text-center tittles">SECCIONES</h3>
             <!-- Tiles -->
             <article class="full-width tile">
-                <div class="tile-text">
-                    <span class="text-condensedLight">
-						1<br>
-						<small>Administradores</small>
-					</span>
-                </div>
-                <i class="zmdi zmdi-account tile-icon"></i>
+                <a href="?c=Usuario&a=Crud">
+                    <div class="tile-text">
+                        <?php
+                        $ctadmin=0;
+                        foreach ($this->admin->listarUsuarios() as $r){
+                            $ctadmin++;
+                        }
+                        
+                        ?>
+                        <span class="text-condensedLight">
+						    <?php echo $ctadmin; ?><br>
+						    <small>Administradores</small>
+					    </span>
+                    </div>
+                    <i class="zmdi zmdi-account tile-icon"></i>
+                </a>
             </article>
             <article class="full-width tile">
             <a href="?c=ClienteProveedor&a=Guardar">
