@@ -7,7 +7,8 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					Formulario para el registro de administradores del sistema
+				<?php echo $usuario->IDLOGIN != null ? 'Editar usuario '.'<strong>'.$usuario->NOMBRE.'</strong>' : 'Formulario para el registro de administradores del sistema'; ?>
+					
 				</p>
 			</div>
 		</section>
@@ -27,26 +28,26 @@
 								<form action="?c=Usuario&a=Guardar" method="post">
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-										<input type="hidden" name="idlogin" value="<?php echo $usuario->idlogin; ?>" />
+										<input type="hidden" name="idusu" value="<?php echo $usuario->IDUSUARIO; ?>" />
 											<h5 class="text-condensedLight">Ingresar datos del nuevo Usuario</h5>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadUser)){echo $BadUser["nombre"];}?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin" name="nombre" required>
+												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadUser)){echo $BadUser["nombre"];} echo $usuario->NOMBRE;?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin" name="nombre" required>
 												<label class="mdl-textfield__label"  for="NameAdmin">Nombre Completo</label>
 												<span class="mdl-textfield__error">Caracteres invalidos</span>
 											</div>
 											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadUser)){echo $BadUser["cargo"];}?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="cargo" name="cargo" required>
+												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadUser)){echo $BadUser["cargo"];} echo $usuario->CARGO; ?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="cargo" name="cargo" required>
 												<label class="mdl-textfield__label" for="NameAdmin">Cargo</label>
 												<span class="mdl-textfield__error">Caracteres invalidos</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" maxlength="2" value='<?php if(isset($BadUser)){echo $BadUser["sistema"];}?>' pattern="-?[0-9]*[A-Za-z]?" id="phoneAdmin" name="sistema" required>
+												<input class="mdl-textfield__input" type="text" maxlength="2" value='<?php if(isset($BadUser)){echo $BadUser["sistema"];} echo $usuario->SISTEMA; ?>' pattern="-?[0-9]*[A-Za-z]?" id="phoneAdmin" name="sistema" required>
 												<label class="mdl-textfield__label" for="phoneAdmin">Numero de Sistema</label>
 												<span class="mdl-textfield__error">Caracteres invalidos</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadUser)){echo $BadUser["empresa"];}?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin" name="empresa" required>
+												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadUser)){echo $BadUser["empresa"];} echo $usuario->EMPRESA; ?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin" name="empresa" required>
 												<label class="mdl-textfield__label" for="LastNameAdmin">Nombre de la Empresa</label>
 												<span class="mdl-textfield__error">Caracteres invalidos</span>
 											</div>
@@ -54,13 +55,13 @@
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
 											<h5 class="text-condensedLight">Credenciales de acceso</h5>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" maxlength="10" value='<?php if(isset($BadUser)){echo $BadUser["pass"];}?>' pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin" name="userid" required>
+												<input class="mdl-textfield__input" type="text" maxlength="10" value='<?php if(isset($BadUser)){echo $BadUser["pass"];} echo $usuario->USERID; ?>' pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin" name="userid" required>
 												<label class="mdl-textfield__label" for="UserNameAdmin">Credencial de usuario</label>
 												<span class="mdl-textfield__error">Caracteres invalidos</span>
 												<span style="color:red;"><?php if(isset($BadUser)){echo $BadUser["error"];}?></span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="password" maxlength="30" id="passwordAdmin" name="pass" required>
+												<input class="mdl-textfield__input" type="password" maxlength="30"  id="passwordAdmin" name="pass" required>
 												<label class="mdl-textfield__label" for="passwordAdmin">Nueva contraseña de usuario</label>
 												
 											</div>

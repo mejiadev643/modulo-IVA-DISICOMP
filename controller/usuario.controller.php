@@ -30,23 +30,25 @@ class UsuarioController{
     public function Crud(){
         $usuario = new Usuario();
         
-        if(isset($_REQUEST['id'])){
+        if(isset($_REQUEST['log'])){
             //si tiene el parámetro asignado ejecutamos el método
-            $usuario = $this->model->obtenerusuario($_REQUEST['id']);
+            $usuario = $this->model->obtenerusuario(base64_decode($_REQUEST['log']));
         }
+        #var_dump($usuario);
 
         //llama todas las partes de la vista para guardar        
         require_once 'view/admin/header.php';
         require_once 'view/admin/notifications.php';
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/registro-usuario.php';
+        
     }
     
     public function Guardar(){
         $usuario = new Usuario();
         
         //captura todos los datos
-        $usuario->idlogin = $_REQUEST['idlogin'];
+        $usuario->idlogin = $_REQUEST['idusu'];
         $usuario->nombre = $_REQUEST['nombre'];
         $usuario->cargo = $_REQUEST['cargo'];
         $usuario->sistema = $_REQUEST['sistema'];
@@ -56,7 +58,12 @@ class UsuarioController{
 
         $conf=$usuario->usuarioReg($usuario);//confirmacion de usuario
         
-        if (empty($conf) == 1) { //si se encuentra vacio se procede a guardar.
+        if (empty($conf) == 1 or $usuario->idlogin > 0) { /*si se encuentra vacio o el atributo idlogin esta lleno se procede a guardar.
+            en este caso pregunte si el array $conf estaba vacio y me tirara que no, pero el idlogin esta lleno
+            asi que:  0 or 1 = 1
+            pasara al else solo si empty es 0 y el idlogin no este lleno
+            osea: 0 or 0 = 0
+            */
             #echo "vacio";
             //si el id es mayor que cero Actualiza si no registra
             $usuario->idlogin > 0 
@@ -91,6 +98,8 @@ class UsuarioController{
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/consultar-usuario.php';
     }
+
+
 
     
 }
