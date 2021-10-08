@@ -44,7 +44,7 @@
 											<span><?php echo $r->IDLOGIN; ?>. <?php echo $r->NOMBRE; ?></span>
 											<span class="mdl-list__item-sub-title"><?php echo $r->USERID; ?></span>
 										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+										<a class="mdl-list__item-secondary-action" onclick=mostrar(<?php echo $r->IDLOGIN; ?>)><i class="zmdi zmdi-more"></i></a>
 									</div>
                                     <li class="full-width divider-menu-h"></li>
                                 <?php endforeach; ?>

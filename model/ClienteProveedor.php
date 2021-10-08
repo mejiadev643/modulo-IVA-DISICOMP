@@ -131,6 +131,18 @@ class ClienteProveedor
 			die($e->getMessage());
 		}
 	}
+	public function eliminarClienteProveedor($data){
+		
+		#echo $data->IDCLIENTE;
+
+		try {
+			$stm = $this->pdo->prepare("DELETE FROM Clientes WHERE IDCLIENTE = ?;");
+			$stm->execute(array($data->IDCLIENTE));
+
+		} catch (\Throwable $th) {
+			echo $th;
+		}
+	}
 
 
 }
