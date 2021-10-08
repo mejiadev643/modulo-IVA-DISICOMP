@@ -14,7 +14,7 @@
                 <i class="zmdi zmdi-account tile-icon"></i>
             </article>
             <article class="full-width tile">
-            <a href="?c=ClienteProveedor&a=Guardar">
+            <a href="?c=ClienteProveedor&a=Consultar">
                 <div class="tile-text">
                     <span class="text-condensedLight">
                     
@@ -29,7 +29,7 @@
             </a>
             </article>
             <article class="full-width tile">
-            <a href="?c=ClienteProveedor&a=Guardar">
+            <a href="?c=ClienteProveedor&a=Consultar">
                 <div class="tile-text">
                     <span class="text-condensedLight">
 						7<br>
