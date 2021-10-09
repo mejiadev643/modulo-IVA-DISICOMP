@@ -89,10 +89,8 @@
 			let editar = document.querySelector("#editar"+id);
 			let eliminar = document.querySelector("#eliminar"+id);
 
-			let estadocargo = cargo.getAttribute("style");
-			let estadoempresa = empresa.getAttribute("style");
-			let estadoeditar = editar.getAttribute("style");
-			let estadoeliminar = eliminar.getAttribute("style");
+			let estadocargo = cargo.getAttribute("style");//unico estado que se desea conocer para cambiar el estado de los demas
+
 
 			if (estadocargo){
 				cargo.setAttribute("style","");
