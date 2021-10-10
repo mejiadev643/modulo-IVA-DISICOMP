@@ -154,7 +154,7 @@ class Usuario
 		#var_dump($data);
 
 		try {//no hace falta explicar, se hace un update con el IDLOGIN que esta en la base de datos.
-			$stm = $this->pdo->prepare("UPDATE Login SET NOMBRE=?, USERID=?, PASS=?, CARGO=?, SISTEMA=?, EMPRESA=? WHERE IDLOGIN=?;");
+			$stm = $this->pdo->prepare("UPDATE Login SET NOMBRE=?, USERID=?, PASS=MD5(?), CARGO=?, SISTEMA=?, EMPRESA=? WHERE IDLOGIN=?;");
 			$stm->execute(array($data->nombre,
 							$data->userid,
 							$data->pass,
