@@ -33,11 +33,6 @@ class ClienteProveedorController{
     public function Crud(){
         $clienteproveedor = new ClienteProveedor();
       
-        
-        if(isset($_REQUEST['id'])){
-            //si tiene el parámetro asignado ejecutamos el método
-            $clienteproveedor = $this->model->obtenercliente($_REQUEST['id']);
-        }
 
         //llama todas las partes de la vista para guardar        
         # administrador
@@ -49,6 +44,26 @@ class ClienteProveedorController{
        
  		
     }
+    public function Editar(){
+        $clienteproveedor = new ClienteProveedor();
+      
+        
+        if(isset($_REQUEST['id'])){
+            //si tiene el parámetro asignado ejecutamos el método
+            $clienteproveedor = $this->model->obtenerClienteProveedor(base64_decode($_REQUEST['id']));
+        }
+
+        //llama todas las partes de la vista para editar        
+        # administrador
+        require_once 'view/admin/header.php';
+        require_once 'view/admin/notifications.php';
+        require_once 'view/admin/navLateral.php';
+        require_once 'view/admin/editar-cliente-proveedor.php';
+        
+       
+ 		
+    }
+
     
     public function Guardar(){
         $clienteproveedor = new ClienteProveedor();
@@ -72,9 +87,6 @@ class ClienteProveedorController{
         $clienteproveedor->NUMSERIE = $_REQUEST['NUMSERIE'];
         $clienteproveedor->DOCUNICO = $_REQUEST['DOCUNICO'];
         $clienteproveedor->USUARIO = $_REQUEST['USUARIO'];
-        $clienteproveedor->FECHAOPE = $_REQUEST['FECHAOPE'];
-        $clienteproveedor->MAQUINA = $_REQUEST['MAQUINA'];
-        $clienteproveedor->HORA = $_REQUEST['HORA'];
         $clienteproveedor->TIPOCLIENT = $_REQUEST['TIPOCLIENT'];
 
         // //si el id es mayor que cero Actualiza si no registra
@@ -93,6 +105,37 @@ class ClienteProveedorController{
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/consultar-cliente-proveedor.php';
     }
+    public function ActualizarClienteProveedor(){
+        $clienteproveedor = new ClienteProveedor();
+        
+        //captura todos los datos
+        $clienteproveedor->IDCLIENTE = $_REQUEST['IDCLIENTE'];
+        $clienteproveedor->CODCLIENT = $_REQUEST['CODCLIENT'];
+        $clienteproveedor->NOMBCLIENT = $_REQUEST['NOMBCLIENT'];
+        $clienteproveedor->DENOMCLIENT = $_REQUEST['DENOMCLIENT'];
+        $clienteproveedor->REGCLIENT = $_REQUEST['REGCLIENT'];
+        $clienteproveedor->GIRONEG = $_REQUEST['GIRONEG'];
+        $clienteproveedor->NUMNIT = $_REQUEST['NUMNIT'];
+        $clienteproveedor->TELEFONO = $_REQUEST['TELEFONO'];
+        $clienteproveedor->DIRNEG = $_REQUEST['DIRNEG'];
+        $clienteproveedor->CIUDAD = $_REQUEST['CIUDAD'];
+        $clienteproveedor->DEPTO = $_REQUEST['DEPTO'];
+        $clienteproveedor->TIPODOCUCRFCOF = $_REQUEST['TIPODOCUCRFCOF'];
+        $clienteproveedor->NOMBRENIT = $_REQUEST['NOMBRENIT'];
+        $clienteproveedor->GRANCONTRIB = $_REQUEST['GRANCONTRIB'];
+        $clienteproveedor->ESTADO = $_REQUEST['ESTADO'];
+        $clienteproveedor->NUMSERIE = $_REQUEST['NUMSERIE'];
+        $clienteproveedor->DOCUNICO = $_REQUEST['DOCUNICO'];
+        $clienteproveedor->USUARIO = $_REQUEST['USUARIO'];
+        $clienteproveedor->TIPOCLIENT = $_REQUEST['TIPOCLIENT'];
+
+        //Actualizar
+        $this->model->ActualizarClienteProveedor($clienteproveedor);
+        
+        //redirecciona a la vista Consultar
+        header('Location: index.php?c=ClienteProveedor&a=Consultar');
+    }
+
     public function Eliminar(){
         $clienteproveedor = new ClienteProveedor();
         
@@ -107,6 +150,11 @@ class ClienteProveedorController{
         
 
     }
+
+   
+    
+
+   
 
     
 }

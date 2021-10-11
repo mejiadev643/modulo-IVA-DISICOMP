@@ -24,13 +24,13 @@
 								Lista de Clientes y administradores
 							</div>
 							<div class="full-width panel-content">
-								<form action="#">
+								<form action="#" method="post" >
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-										<label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
+										<label class="mdl-button  mdl-button--icon" for="searchAdmin">
 											<i class="zmdi zmdi-search"></i>
 										</label>
 										<div class="mdl-textfield__expandable-holder">
-											<input class="mdl-textfield__input" type="text" id="searchAdmin">
+											<input class="mdl-textfield__input" type="text" name="BUSCAR" id="searchAdmin">
 											<label class="mdl-textfield__label"></label>
 										</div>
 									</div>
@@ -104,7 +104,17 @@
 									</div>
 									<div class="mdl-list__item " id="seriecliente<?php echo $r->IDCLIENTE; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Numero de serie: "; ?> <?php echo $r->NUMSERIE	; ?></span>
+											<span><?php echo "Numero de serie: "; ?> <?php echo $r->NUMSERIE; ?></span>
+										</span>	
+									</div>
+									<div class="mdl-list__item " id="estadocliente<?php echo $r->IDCLIENTE; ?>" style="display:none;">
+										<span class="mdl-list__item-primary-content">
+											<span><?php echo "Estado del cliente: "; ?> <?php echo $r->ESTADO; ?></span>
+										</span>	
+									</div>
+									<div class="mdl-list__item " id="unicocliente<?php echo $r->IDCLIENTE; ?>" style="display:none;">
+										<span class="mdl-list__item-primary-content">
+											<span><?php echo "Emite formulario unico?: "; ?> <?php echo $r->DOCUNICO; ?></span>
 										</span>	
 									</div>
 									<div class="mdl-list__item " id="usuariocliente<?php echo $r->IDCLIENTE; ?>" style="display:none;">
@@ -128,7 +138,7 @@
 										</span>	
 									</div>
 									<p class="text-center">
-										<a href="#" >
+										<a href="?c=ClienteProveedor&a=Editar&id=<?php echo base64_encode($r->IDCLIENTE); ?>" >
 											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"  id="editar<?php echo $r->IDCLIENTE; ?>" type="button" name="editar" style="display:none;">
 												<i class="zmdi zmdi-edit"></i>
 											</button>
@@ -162,6 +172,8 @@
 			let nombrenitcliente = document.querySelector("#nombrenitcliente"+id);
 			let contribcliente = document.querySelector("#contribcliente"+id);
 			let seriecliente = document.querySelector("#seriecliente"+id);
+			let estadocliente = document.querySelector("#estadocliente"+id);
+			let unicocliente = document.querySelector("#unicocliente"+id);
 			let usuariocliente = document.querySelector("#usuariocliente"+id);
 			let fechacliente = document.querySelector("#fechacliente"+id);
 			let maquinacliente = document.querySelector("#maquinacliente"+id);
@@ -190,6 +202,8 @@
 				nombrenitcliente.setAttribute("style","");
 				contribcliente.setAttribute("style","");
 				seriecliente.setAttribute("style","");
+				estadocliente.setAttribute("style","");
+				unicocliente.setAttribute("style","");
 				usuariocliente.setAttribute("style","");
 				fechacliente.setAttribute("style","");
 				maquinacliente.setAttribute("style","");
@@ -210,6 +224,8 @@
 				nombrenitcliente.setAttribute("style","display:none;");
 				contribcliente.setAttribute("style","display:none;");
 				seriecliente.setAttribute("style","display:none;");
+				unicocliente.setAttribute("style","display:none;");
+				estadocliente.setAttribute("style","display:none;");
 				usuariocliente.setAttribute("style","display:none;");
 				fechacliente.setAttribute("style","display:none;");
 				maquinacliente.setAttribute("style","display:none;");

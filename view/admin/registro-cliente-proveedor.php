@@ -50,7 +50,7 @@ date_default_timezone_set("America/El_Salvador");
 												<span class="mdl-textfield__error">Denominación invalida</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9\-]+" id="registro" name="REGCLIENT" title="Digite registro de cliente" required>
+												<input class="mdl-textfield__input cero" type="tel" pattern="([1-9-][0-9\-]+)?"  id="registro" name="REGCLIENT" title="Digite registro de cliente" required>
 												<label class="mdl-textfield__label" for="registro">Registro de cliente</label>
 												<span class="mdl-textfield__error">Registro invalido</span>
 											</div>

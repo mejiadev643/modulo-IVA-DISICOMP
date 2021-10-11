@@ -3,7 +3,7 @@ class ClienteProveedor
 {
 	private $pdo;
     
-	public $IDCLIENTE;
+	public $BUSCAR;
     public $CODCLIENT;
     public $NOMBCLIENT;
     public $DENOMCLIENT;
@@ -143,6 +143,82 @@ class ClienteProveedor
 			echo $th;
 		}
 	}
+	public function obtenerClienteProveedor($id){
+		try {
+			$stm = $this->pdo->prepare("SELECT * FROM Clientes WHERE IDCLIENTE = ?");
+			$stm->execute(array($id));
+
+			return $stm->fetch(PDO::FETCH_OBJ);
+
+		} catch (\Throwable $th) {
+			echo $th;
+		}
+
+
+	}
+	public function ActualizarClienteProveedor($data)
+	{
+		try 
+		{
+			$sql = "UPDATE Clientes SET 
+						CODCLIENT            = ?, 
+						NOMBCLIENT          = ?,
+                        DENOMCLIENT             = ?,
+						REGCLIENT            = ?, 
+						GIRONEG            = ?, 
+						NUMNIT            = ?, 
+						TELEFONO            = ?, 
+						DIRNEG            = ?, 
+						CIUDAD            = ?, 
+						DEPTO            = ?, 
+						TIPOCLIENT            = ?, 
+						TIPODOCUCRFCOF            = ?, 
+						NOMBRENIT            = ?, 
+						GRANCONTRIB            = ?, 
+						ESTADO            = ?, 
+						NUMSERIE            = ?, 
+						DOCUNICO            = ?, 
+						USUARIO            = ?
+				    WHERE IDCLIENTE = ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+                        $data->CODCLIENT, 
+                        $data->NOMBCLIENT,
+                        $data->DENOMCLIENT,
+						$data->REGCLIENT,
+						$data->GIRONEG,
+						$data->NUMNIT,
+						$data->TELEFONO,
+						$data->DIRNEG,
+						$data->CIUDAD,
+						$data->DEPTO,
+						$data->TIPOCLIENT,
+						$data->TIPODOCUCRFCOF,
+						$data->NOMBRENIT,
+						$data->GRANCONTRIB,
+						$data->ESTADO,
+						$data->NUMSERIE,
+						$data->DOCUNICO,
+						$data->USUARIO,
+                        $data->IDCLIENTE
+					)
+				);
+		}
+        catch (Throwable $t)//php7
+        {
+			die($t->getMessage());
+        }
+		catch(Exception $e)//php5
+		{
+			die($e->getMessage());
+		}
+	}
+
+	
+	
+	
 
 
 }
