@@ -17,7 +17,7 @@
 					<li class="text-condensedLight noLink" ><small><?php echo $_SESSION["NOMBRE"]; ?></small></li>
 					<li class="noLink">
 						<figure>
-							<img src="materializecss/assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+							<img src="materializecss/img/disicomp.ico" alt="Avatar" class="img-responsive">
 						</figure>
 					</li>
 				</ul>
@@ -33,7 +33,7 @@
 			</div>
 			<figure class="full-width" style="height: 77px;">
 				<div class="navLateral-body-cl">
-					<img src="materializecss/assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+					<img src="materializecss/img/disicomp.ico" alt="Avatar" class="img-responsive">
 				</div>
 				<figcaption class="navLateral-body-cr hide-on-tablet">
 					<span>
@@ -70,7 +70,7 @@
 						</a>
 						<ul class="full-width menu-principal sub-menu-options">
 							<li class="full-width">
-								<a href="company.html" class="full-width">
+								<a href="#" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-balance"></i>
 									</div>
@@ -80,32 +80,12 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="?c=ClienteProveedor&a=Crud" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-truck"></i>
-									</div>
-									<div class="navLateral-body-cr hide-on-tablet">
-										PROVEEDORES
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="payments.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-card"></i>
-									</div>
-									<div class="navLateral-body-cr hide-on-tablet">
-									PAGOS
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="categories.html" class="full-width">
+								<a href="?c=Transiva&a=Crud" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-label"></i>
 									</div>
 									<div class="navLateral-body-cr hide-on-tablet">
-										CATEGORIAS
+										TRANSACCIONES IVA
 									</div>
 								</a>
 							</li>
@@ -139,7 +119,7 @@
 										<i class="zmdi zmdi-accounts"></i>
 									</div>
 									<div class="navLateral-body-cr hide-on-tablet">
-										CLIENTES
+										CLIENTES / PROVEEDORES
 									</div>
 								</a>
 							</li>
@@ -147,7 +127,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="products.html" class="full-width">
+						<a href="#" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-washing-machine"></i>
 							</div>
@@ -158,7 +138,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="sales.html" class="full-width">
+						<a href="#" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
@@ -168,16 +148,6 @@
 						</a>
 					</li>
 					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="inventory.html" class="full-width">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-store"></i>
-							</div>
-							<div class="navLateral-body-cr hide-on-tablet">
-								INVENTARIO
-							</div>
-						</a>
-					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
@@ -185,7 +155,7 @@
 								<i class="zmdi zmdi-wrench"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
-								AJUSTES
+								MANUALES
 							</div>
 							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
@@ -196,7 +166,7 @@
 										<i class="zmdi zmdi-widgets"></i>
 									</div>
 									<div class="navLateral-body-cr hide-on-tablet">
-										OPCIÓN
+										Manual Usuario
 									</div>
 								</a>
 							</li>
@@ -206,7 +176,7 @@
 										<i class="zmdi zmdi-widgets"></i>
 									</div>
 									<div class="navLateral-body-cr hide-on-tablet">
-										OPCIÓN
+										Manual Técnico
 									</div>
 								</a>
 							</li>
