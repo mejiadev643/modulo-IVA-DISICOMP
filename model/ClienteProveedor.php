@@ -4,6 +4,7 @@ class ClienteProveedor
 	private $pdo;
     
 	public $BUSCAR;
+	public $IDCLIENTE;
     public $CODCLIENT;
     public $NOMBCLIENT;
     public $DENOMCLIENT;
