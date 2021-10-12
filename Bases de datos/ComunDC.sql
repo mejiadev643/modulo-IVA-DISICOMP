@@ -176,8 +176,8 @@ INSERT INTO `Tiposdeventa` (`IDCODIGO`, `CODIGO`, `NOMBRE`, `SIGLAS`) VALUES
 -- Estructura de tabla para la tabla `TransacIva`
 --
 
-DROP TABLE IF EXISTS `TransacIva`;
-CREATE TABLE IF NOT EXISTS `TransacIva` (
+DROP TABLE IF EXISTS `Transaciva`;
+CREATE TABLE IF NOT EXISTS `Transaciva` (
   `IDIVA` int(11) NOT NULL AUTO_INCREMENT,
   `CODTRAN` varchar(2) DEFAULT NULL,
   `NOMBRE` varchar(35) DEFAULT NULL,
