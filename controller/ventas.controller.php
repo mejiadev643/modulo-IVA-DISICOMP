@@ -9,6 +9,7 @@
 
 #utilizaremos la clase Ventas
 require_once 'model/Ventas.php';
+require_once 'model/ConexionMovimientosDC.php';
 
 class VentasController{  
     
