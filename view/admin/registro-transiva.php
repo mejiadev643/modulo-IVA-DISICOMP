@@ -39,7 +39,7 @@
 											</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" maxlength="50" value='<?php if(isset($BadTran)){echo $BadTran["nombre"];} echo $transiva->NOMBRE;?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombre" name="nombre" required>
+												<input class="mdl-textfield__input" type="text" maxlength="35" value='<?php if(isset($BadTran)){echo $BadTran["nombre"];} echo $transiva->NOMBRE;?>' pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombre" name="nombre" required>
 												<label class="mdl-textfield__label"  for="NameAdmin">Nombre de la Transacción</label>
 												<span class="mdl-textfield__error">Nombre Invalido</span>
 											</div>
@@ -55,7 +55,7 @@
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" maxlength="1" value='<?php if(isset($BadTran)){echo $BadTran["sinoiva"];} echo $transiva->SINOIVA;?>' pattern="[1 2]" id="sinoiva" name="sinoiva" required>
 												<label class="mdl-textfield__label"  for="NameAdmin">Si (1) O No(2) IVA</label>
-												<span class="mdl-textfield__error">Occión Invalida</span>
+												<span class="mdl-textfield__error">Opción Invalida</span>
 											</div>
 
 										</div>
