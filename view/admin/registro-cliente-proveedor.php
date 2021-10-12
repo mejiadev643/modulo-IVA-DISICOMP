@@ -35,55 +35,55 @@ date_default_timezone_set("America/El_Salvador");
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
 										<input type="hidden" name="IDCLIENTE" value="<?php echo $clienteproveedor->IDCLIENTE; ?>" />
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9]+" id="codigocliente" name="CODCLIENT" title="Digite código sin guión">
+												<input class="mdl-textfield__input" type="tel" pattern="[0-9\-]+" id="codigocliente" maxlength="10" minlength="10" name="CODCLIENT" title="Digite código sin guión" required>
 												<label class="mdl-textfield__label" for="codigocliente">Código de cliente</label>
 												<span class="mdl-textfield__error">Numero de cliente invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin" name="NOMBCLIENT" title="Digite su nombre completo">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin" name="NOMBCLIENT" title="Digite su nombre completo" required>
 												<label class="mdl-textfield__label" for="NameAdmin">Nombre Completo</label>
-												<span class="mdl-textfield__error">Invalid name</span>
+												<span class="mdl-textfield__error">Nombre invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="[A-Za-záéíóúÁÉÍÓÚ\ .]+" id="Denominacion" name="DENOMCLIENT" title="Digite la denominación">
+												<input class="mdl-textfield__input" type="text" pattern="[A-Za-záéíóúÁÉÍÓÚ\ .]+" id="Denominacion" name="DENOMCLIENT" title="Digite la denominación" required>
 												<label class="mdl-textfield__label" for="Denominacion">Denominación</label>
-												<span class="mdl-textfield__error">Invalid Denominación</span>
+												<span class="mdl-textfield__error">Denominación invalida</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9\-]+" id="registro" name="REGCLIENT" title="Digite registro de cliente">
+												<input class="mdl-textfield__input cero" type="tel" pattern="([1-9-][0-9\-]+)?"  id="registro" name="REGCLIENT" title="Digite registro de cliente" required>
 												<label class="mdl-textfield__label" for="registro">Registro de cliente</label>
-												<span class="mdl-textfield__error">Invalid registro</span>
+												<span class="mdl-textfield__error">Registro invalido</span>
 											</div>
 											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="[A-Za-záéíóúÁÉÍÓÚ\ .]+" id="direccion" name="DIRNEG" title="Digite la dirección del negocio">
+												<input class="mdl-textfield__input" type="text" pattern="[A-Za-záéíóúÁÉÍÓÚ\ .]+" id="direccion" name="DIRNEG" title="Digite la dirección del negocio" required>
 												<label class="mdl-textfield__label" for="dirección">Dirección del negocio</label>
-												<span class="mdl-textfield__error">Invalid dirección del negocio</span>
+												<span class="mdl-textfield__error">Dirección del negocio invalida</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="ciudad" name="CIUDAD" title="Digite la ciudad del negocio">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="ciudad" name="CIUDAD" title="Digite la ciudad del negocio" required>
 												<label class="mdl-textfield__label" for="ciudad">Ciudad del negocio</label>
-												<span class="mdl-textfield__error">Invalid ciudad del negocio</span>
+												<span class="mdl-textfield__error">Ciudad del negocio invalida</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="departamento" name="DEPTO" title="Digite el departamento del negocio">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="departamento" name="DEPTO" title="Digite el departamento del negocio" required>
 												<label class="mdl-textfield__label" for="departamento">Departamento del negocio</label>
-												<span class="mdl-textfield__error">Invalid departamento del negocio</span>
+												<span class="mdl-textfield__error">Departamento del negocio invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" id="telefono" name="TELEFONO" pattern="[0-9\-]+" title="Digite su numero teléfono">
+												<input class="mdl-textfield__input" type="tel" id="telefono" name="TELEFONO"  maxlength="8" pattern="[0-9\-]+" title="Digite su numero teléfono" required>
 												<label class="mdl-textfield__label" for="telefono">Numero de teléfono</label>
-												<span class="mdl-textfield__error">Invalid numero de teléfono</span>
+												<span class="mdl-textfield__error">Numero de teléfono invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="giro" name="GIRONEG" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" title="Digite el giro de su negocio">
+												<input class="mdl-textfield__input" type="text" id="giro" name="GIRONEG" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" title="Digite el giro de su negocio" required>
 												<label class="mdl-textfield__label" for="giro">Giro del negocio</label>
-												<span class="mdl-textfield__error">Invalid giro de negocio</span>
+												<span class="mdl-textfield__error">Giro de negocio invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9]+" id="nit" name="NUMNIT" title="Digite su numero de nit">
+												<input class="mdl-textfield__input" type="tel" pattern="[0-9]+" id="nit" minlength="14"  maxlength="14" name="NUMNIT" title="Digite su numero de nit" required>
 												<label class="mdl-textfield__label" for="nit">Numero de Nit</label>
-												<span class="mdl-textfield__error">Invalid numero de nit</span>
+												<span class="mdl-textfield__error">Numero de nit invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Tipo de cliente</p>
@@ -104,20 +104,20 @@ date_default_timezone_set("America/El_Salvador");
 											
 											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="serie" name="NUMSERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie">
+												<input class="mdl-textfield__input" type="text"  id="serie"  maxlength="13" name="NUMSERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie" required>
 												<label class="mdl-textfield__label" for="serie">Numero de Serie</label>
-												<span class="mdl-textfield__error">Invalid numero de serie</span>
+												<span class="mdl-textfield__error">Numero de serie invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="nombrenit" name="NOMBRENIT" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" title="Digite su nombre segun nit">
+												<input class="mdl-textfield__input" type="text"  id="nombrenit" name="NOMBRENIT" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" title="Digite su nombre segun nit" required>
 												<label class="mdl-textfield__label" for="nombrenit">Nombre segun nit</label>
-												<span class="mdl-textfield__error">Invalid nombre</span>
+												<span class="mdl-textfield__error">Nombre segun Nit invalido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Tipo de Documento</p>
 											<?php foreach($this->model2->listarTipoVenta() as $r): ?>
 												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="<?php echo $r->IDCODIGO; ?>">
-  													<input type="radio" id="<?php echo $r->IDCODIGO; ?>" class="mdl-radio__button" name="TIPODOCUCRFCOF" value="<?php echo $r->CODIGO; ?>">
+  													<input type="radio" id="<?php echo $r->IDCODIGO; ?>" class="mdl-radio__button" name="TIPODOCUCRFCOF" value="<?php echo $r->CODIGO; ?>" required>
   													<span class="mdl-radio__label"><?php echo $r->NOMBRE; ?></span>
 												</label>
 												<?php endforeach; ?>
@@ -159,7 +159,7 @@ date_default_timezone_set("America/El_Salvador");
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" id="usuario" name="USUARIO" title="Este es el usuario que ara el registro" value="<?php echo $_SESSION["USERID"]; ?>">
 												<label class="mdl-textfield__label" for="dirección">Usuario que ara el registro</label>
-												<span class="mdl-textfield__error">Invalid usuario</span>
+												<span class="mdl-textfield__error">Usuario invalido</span>
 											</div>
 											<input type="hidden" name="FECHAOPE" value="<?php echo $fecha?>" />
 											<input type="hidden" name="MAQUINA" value="<?php echo $maquina ?>" />

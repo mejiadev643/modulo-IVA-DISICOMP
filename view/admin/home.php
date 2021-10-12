@@ -24,7 +24,9 @@
             </article>
 
             <article class="full-width tile">
-            <a href="?c=ClienteProveedor&a=Crud">
+
+            <a href="?c=ClienteProveedor&a=Consultar">
+
                 <div class="tile-text">
                     <span class="text-condensedLight">
 						1<br>
@@ -37,7 +39,9 @@
             </article>
 
             <article class="full-width tile">
-            <a href="#">
+
+            <a href="?c=ClienteProveedor&a=Consultar">
+
                 <div class="tile-text">
                     <span class="text-condensedLight">
 						<br>
