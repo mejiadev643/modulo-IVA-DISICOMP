@@ -5,53 +5,71 @@
             <h3 class="text-center tittles">SECCIONES</h3>
             <!-- Tiles -->
             <article class="full-width tile">
+                <a href="?c=Usuario&a=Crud">
+                    <div class="tile-text">
+                        <?php
+                        $ctadmin=0;
+                        foreach ($this->admin->listarUsuarios() as $r){
+                            $ctadmin++;
+                        }
+                        
+                        ?>
+                        <span class="text-condensedLight">
+						    <?php echo $ctadmin; ?><br>
+						    <small>Administradores</small>
+					    </span>
+                    </div>
+                    <i class="zmdi zmdi-account tile-icon"></i>
+                </a>
+            </article>
+
+            <article class="full-width tile">
+
+            <a href="?c=ClienteProveedor&a=Consultar">
+
                 <div class="tile-text">
                     <span class="text-condensedLight">
 						1<br>
-						<small>Administradores</small>
-					</span>
-                </div>
-                <i class="zmdi zmdi-account tile-icon"></i>
-            </article>
-            <article class="full-width tile">
-            <a href="?c=ClienteProveedor&a=Consultar">
-                <div class="tile-text">
-                    <span class="text-condensedLight">
-                    
-						71<br>
-                       
-						<small>Clientes</small>
-                   
+						<small>Clientes y Proveedores</small>
 					</span>
                     
                 </div>
                 <i class="zmdi zmdi-accounts tile-icon"></i>
             </a>
             </article>
+
             <article class="full-width tile">
+
             <a href="?c=ClienteProveedor&a=Consultar">
+
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						7<br>
-						<small>Proveedores</small>
+						<br>
+						<small>Empresa</small>
 					</span>
                 </div>
-                <i class="zmdi zmdi-truck tile-icon"></i>
+                <i class="zmdi zmdi-balance tile-icon"></i>
             </a>
             </article>
+
             <article class="full-width tile">
-                <div class="tile-text">
+                <a href="?c=Transiva&a=Crud">
+                    <div class="tile-text">
                     <span class="text-condensedLight">
-						9<br>
-						<small>Categorias</small>
-					</span>
+                        <br>
+                        <span class="text-condensedLight">
+                            <small>Transacciones IVA</small>
+                        </span>
+                    </span>
                 </div>
-                <i class="zmdi zmdi-label tile-icon"></i>
+                    <i class="zmdi zmdi-card tile-icon"></i>
+                </a>
             </article>
+
             <article class="full-width tile">
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						121<br>
+						<br>
 						<small>Productos</small>
 					</span>
                 </div>
@@ -60,7 +78,7 @@
             <article class="full-width tile">
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						47<br>
+						<br>
 						<small>Ventas</small>
 					</span>
                 </div>

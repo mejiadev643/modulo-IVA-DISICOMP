@@ -6,7 +6,18 @@
     - Manda la información al modelo
     - Carga las vistas como respuesta al usuario
 */
-class PrincipalController{  
+
+#utilizaremos la clase Usuario para encontrar el total de usuarios
+require_once 'model/Usuario.php';
+
+class PrincipalController{
+    
+    private $admin;
+    
+    public function __CONSTRUCT(){
+        //inicializa el modelo Usuario para usar el metodo listar usuario
+        $this->admin= new Usuario();
+    }
        
     public function Index(){    
 
