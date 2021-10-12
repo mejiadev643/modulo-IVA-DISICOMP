@@ -100,12 +100,12 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="categories.html" class="full-width">
+								<a href="?c=Transiva&a=Crud" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-label"></i>
 									</div>
 									<div class="navLateral-body-cr hide-on-tablet">
-										CATEGORIAS
+										TRANSACCIONES IVA
 									</div>
 								</a>
 							</li>

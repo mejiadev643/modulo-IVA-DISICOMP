@@ -4,25 +4,18 @@
         <section class="full-width text-center" style="padding: 40px 0;">
             <h3 class="text-center tittles">SECCIONES</h3>
             <!-- Tiles -->
+            <a href="?c=Usuario&a=Crud">
             <article class="full-width tile">
-                <a href="?c=Usuario&a=Crud">
-                    <div class="tile-text">
-                        <?php
-                        $ctadmin=0;
-                        foreach ($this->admin->listarUsuarios() as $r){
-                            $ctadmin++;
-                        }
-                        
-                        ?>
-                        <span class="text-condensedLight">
-						    <?php echo $ctadmin; ?><br>
-						    <small>Administradores</small>
-					    </span>
-                    </div>
-                    <i class="zmdi zmdi-account tile-icon"></i>
-                </a>
+                <div class="tile-text">
+                    <span class="text-condensedLight">
+						1<br>
+						<small>Administradores</small>
+					</span>
+                </div>
+                <i class="zmdi zmdi-account tile-icon"></i>
             </article>
             <article class="full-width tile">
+            </a>
             <a href="?c=ClienteProveedor&a=Guardar">
                 <div class="tile-text">
                     <span class="text-condensedLight">
@@ -48,15 +41,16 @@
                 <i class="zmdi zmdi-truck tile-icon"></i>
             </a>
             </article>
+            <a href="?c=Transiva&a=Crud">
             <article class="full-width tile">
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						9<br>
-						<small>Categorias</small>
+						<small>Transacciones IVA</small>
 					</span>
                 </div>
-                <i class="zmdi zmdi-label tile-icon"></i>
+                <i class="zmdi zmdi-card tile-icon"></i>
             </article>
+            </a>
             <article class="full-width tile">
                 <div class="tile-text">
                     <span class="text-condensedLight">
