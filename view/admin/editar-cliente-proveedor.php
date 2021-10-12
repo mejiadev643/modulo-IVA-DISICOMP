@@ -1,9 +1,4 @@
-<?php
-date_default_timezone_set("America/El_Salvador");
-	$hora = date('H:i:s',time()); 
-	$fecha = date('Y-m-d', time());
-	$maquina = gethostname();
-?>
+
 	<!-- pageContent -->
 	<section class="full-width pageContent">
 		<section class="full-width header-well">
