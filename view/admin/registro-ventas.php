@@ -76,7 +76,7 @@ date_default_timezone_set("America/El_Salvador");
 											</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="VALOR" name="VALOR" title="Digite valor gravado" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="valor" name="VALOR" title="Digite valor gravado" value="0.00" onkeyup=imprimevalor()  required>
 												<label class="mdl-textfield__label" for="valor">Valor gravado</label>
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
@@ -85,7 +85,7 @@ date_default_timezone_set("America/El_Salvador");
 											<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="IVA13" name="IVA13" title="Valor iva" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva13" name="IVA13" title="Valor iva" value="0.00" readonly required>
 												<label class="mdl-textfield__label" for="valor">Valor Iva 13 %</label>
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
@@ -116,7 +116,7 @@ date_default_timezone_set("America/El_Salvador");
 												<span class="mdl-textfield__error">No ha digitado valor de cotran</span>
 											</div>	
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="TOTAL" name="TOTAL" title="valor total" value="0.00" readonly required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="vtotal" name="TOTAL" title="valor total" value="0.00" readonly required>
 												<label class="mdl-textfield__label" for="valor">Valor Total documento</label>
 												
 											</div>	
@@ -153,5 +153,6 @@ date_default_timezone_set("America/El_Salvador");
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript" src="js/calculos.js"></script>
 </body>
 </html>
