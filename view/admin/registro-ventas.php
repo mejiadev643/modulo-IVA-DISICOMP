@@ -80,6 +80,11 @@ date_default_timezone_set("America/El_Salvador");
 												<label class="mdl-textfield__label" for="valor">Valor gravado</label>
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label for="valor">Gran contribuyente: </label>
+												<i class="zmdi zmdi-circle-o" onclick=contrib() id="boton"></i>
+
+											</div>
 										</div><!--end of form left-->
 
 											<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
@@ -90,7 +95,7 @@ date_default_timezone_set("America/El_Salvador");
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="IVA1" name="IVA1" title="valor retencion/percepcion" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva1" name="IVA1" title="valor retencion/percepcion" value="0.00" readonly required>
 												<label class="mdl-textfield__label" for="valor">Valor retencion/percepcion</label>
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
