@@ -10,6 +10,8 @@
 #utilizaremos la clase Ventas
 require_once 'model/Ventas.php';
 require_once 'model/ConexionMovimientosDC.php';
+require_once 'model/ConexionComunDC.php';
+require_once 'model/Transiva.php';
 
 class VentasController{  
     
@@ -18,6 +20,7 @@ class VentasController{
     public function __CONSTRUCT(){
         //inicializa el modelo Ventas
         $this->model = new Ventas();
+        $this->model2 =new Transiva();
     }
        
     public function Index(){        

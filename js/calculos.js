@@ -15,7 +15,16 @@ function imprimevalor(){
 
 	let contribuye = grancontri(val);// se recibe el valor que se retorna de la funcion gran contri
 
-	valortotal(val, calculo, contribuye); //se envian las variables a valor total 
+	let valrete2 = rete2(val);// se recibe el valor que se retorna de la funcion rete2
+
+	let valfovial = fovial(val);// se recibe el valor que se retorna de la funcion fovial
+
+	let valcotran = cotran(val);// se recibe el valor que se retorna de la funcion cotran	
+
+	let valexe = exen(val);// se recibe el valor que se retorna de la funcion exen
+
+
+	valortotal(val, calculo, contribuye, valrete2, valfovial, valcotran, valexe ); //se envian las variables a valor total 
 
 }
 
@@ -32,9 +41,9 @@ function setiva13(data){
 
 }
 
-function valortotal(valor, iva13, contribuye){
+function valortotal(valor, iva13, contribuye, valrete2, valfovial, valcotran, valexe){
 	let vtotal = document.querySelector("#vtotal");
-	let suma = (parseFloat(valor) + parseFloat(iva13) + parseFloat(contribuye) ).toFixed(2);
+	let suma = (parseFloat(valor) + parseFloat(iva13) + parseFloat(contribuye) + parseFloat(valrete2) + parseFloat(valfovial) + parseFloat(valcotran) + parseFloat(valexe)).toFixed(2);
 	vtotal.value=suma;
 
 }
@@ -52,23 +61,16 @@ function grancontri(val){
 		
 		//console.log("no hay ");
 
-
 	}else{
 		total = "0.00";
 		//console.log("modificado");
 
 	}
-
-
 	
 	return total;
 
-
 }
 
-
-
- 
 
 function contrib(){
 	grande = document.querySelector("#boton");
@@ -93,9 +95,7 @@ function contrib(){
 		
 		nvalor.value = (parseFloat(valoractual) + parseFloat(contrib.value) ).toFixed(2) ;
 
-		
-
-
+	
 		contador = 1 ;
 		//console.log("modificado");
 
@@ -116,6 +116,37 @@ function contrib(){
 
 		contador = 0;
 		//console.log("si pasa por else");
-
 	}
+	
+}	
+
+
+function fovial(){
+	
+	let fo = parseFloat(document.querySelector("#fovial").value).toFixed(2);
+	
+		return fo;
 }
+
+function cotran(){
+	
+	let co = parseFloat(document.querySelector("#cotran").value).toFixed(2);
+	
+		return co;
+}
+
+function rete2(){
+	
+	let r2 = parseFloat(document.querySelector("#iva2").value).toFixed(2);
+	
+		return r2;
+}
+
+
+function exen(){
+	
+	let ex = parseFloat(document.querySelector("#exentas").value).toFixed(2);
+	
+		return ex;
+}
+ 

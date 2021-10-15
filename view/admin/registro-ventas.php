@@ -32,15 +32,22 @@ date_default_timezone_set("America/El_Salvador");
 							<div class="full-width panel-content">
 								<form action="?c=Ventas&a=Guardar" method="post">
 									<div class="mdl-grid">
-										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
 										<input type="hidden" name="IDVENTA" value="<?php echo $Ventas->IDVENTA; ?>" />
+
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<label  for="transaccion">Seleccione Código de transaccion</label>
-											<select class="mdl-browser-default" id="transaccion" name="transaccion" required="" title="Seleccione código de transaccion a procesar" >
-											<option value="0" >Selección:</option>
-											</select>
-											<span class="mdl-textfield__error">Seleccione tipo de transaccion</span>
-											</div>
+											<p class="text-condensedLight">Transaccion</p>
+
+											<?php foreach($this->model2->listarTransiva() as $t): ?>
+																					
+												<select class="custom-select" id="<?php echo $t->IDIVA; ?>" name="tt" required="" >
+													<option selected>Selección:</option>					
+		         									<option value="<?php echo $t; ?>"></option> 									
+
+												</select>
+										
+											<?php endforeach; ?>
+										</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="SUCURSAL" name="SUCURSAL" title="Digite código de sucursal">
@@ -76,10 +83,12 @@ date_default_timezone_set("America/El_Salvador");
 											</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="valor" name="VALOR" title="Digite valor gravado" value="0.00" onkeyup=imprimevalor()  required>
-												<label class="mdl-textfield__label" for="valor">Valor gravado</label>
-												<span class="mdl-textfield__error">No ha digitado valor</span>
-											</div>
+												<label for="valor">Fecha de Iva</label>
+												<input type="date" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="FECOPERA" name="FECOPERA" required>
+												
+												<span class="mdl-textfield__error">seleccione fecha</span>
+											</div>												
+											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<label for="valor">Gran contribuyente: </label>
 												<i class="zmdi zmdi-circle-o" onclick=contrib() id="boton"></i>
@@ -87,7 +96,15 @@ date_default_timezone_set("America/El_Salvador");
 											</div>
 										</div><!--end of form left-->
 
-											<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="valor" name="VALOR" title="Digite valor gravado" value="0.00" onkeyup=imprimevalor()  required>
+												<label class="mdl-textfield__label" for="valor">Valor gravado</label>
+												<span class="mdl-textfield__error">No ha digitado valor</span>
+											</div>
+
+											
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva13" name="IVA13" title="Valor iva" value="0.00" readonly required>
@@ -100,37 +117,33 @@ date_default_timezone_set("America/El_Salvador");
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="IVA2" name="IVA2" title="valor retencion/percepcion" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva2" name="iva2" title="valor retencion/percepcion" value="0.00" onkeyup=imprimevalor() required>
 												<label class="mdl-textfield__label" for="valor">Valor retencion 2%</label>
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>	
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="EXENTAS" name="EXENTAS" title="Valor exento" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="exentas" name="exentas" title="Valor exento" value="0.00" onkeyup=imprimevalor() >
 												<label class="mdl-textfield__label" for="valor exento">Valor exento</label>
 												<span class="mdl-textfield__error">No ha digitado valor exento</span>
 											</div>
 											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="FOVIAL" name="FOVIAL" title="valor fovial" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="fovial" name="FOVIAL" title="valor fovial" value="0.00" onkeyup=imprimevalor() required>
 												<label class="mdl-textfield__label" for="fovial">Valor fovial</label>
 												<span class="mdl-textfield__error">No ha digitado valor de fovial</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="COTRAN" name="COTRAN" title="valor cotran" value="0.00" required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="cotran" name="cotran" title="valor cotran" value="0.00" onkeyup=imprimevalor() required>
 												<label class="mdl-textfield__label" for="valor">Valor cotran</label>
 												<span class="mdl-textfield__error">No ha digitado valor de cotran</span>
 											</div>	
+
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="vtotal" name="TOTAL" title="valor total" value="0.00" readonly required>
 												<label class="mdl-textfield__label" for="valor">Valor Total documento</label>
 												
 											</div>	
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<label for="valor">Fecha de Iva</label>
-												<input type="date" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="FECOPERA" name="FECOPERA" required>
-												
-												<span class="mdl-textfield__error">seleccione fecha</span>
-											</div>	
+											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" id="USUARIO" name="USUARIO" title="Este es el usuario que realiza el registro" value="<?php echo $_SESSION["USERID"]; ?>" readonly	>
 												<label class="mdl-textfield__label" for="dirección">Usuario que realiza el registro</label>
