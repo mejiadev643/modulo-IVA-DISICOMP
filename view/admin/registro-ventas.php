@@ -37,16 +37,17 @@ date_default_timezone_set("America/El_Salvador");
 
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Transaccion</p>
+											<select class="custom-select" name="tt" required >
+												<option selected>Selección:</option>
 
 											<?php foreach($this->model2->listarTransiva() as $t): ?>
 																					
-												<select class="custom-select" id="<?php echo $t->IDIVA; ?>" name="tt" required="" >
-													<option selected>Selección:</option>					
-		         									<option value="<?php echo $t; ?>"></option> 									
-
-												</select>
-										
+																	
+		         									<option id="<?php echo $t->IDIVA; ?>"> <?php echo $t->NOMBRE; ?></option> 				
+								
 											<?php endforeach; ?>
+
+											</select>
 										</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
