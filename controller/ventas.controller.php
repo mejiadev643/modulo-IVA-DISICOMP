@@ -10,7 +10,7 @@
 #utilizaremos la clase Ventas
 require_once 'model/Ventas.php';
 require_once 'model/ConexionMovimientosDC.php';
-require_once 'model/ConexionComunDC.php';
+require_once 'model/ConexionComunDc.php';
 require_once 'model/Transiva.php';
 
 class VentasController{  
