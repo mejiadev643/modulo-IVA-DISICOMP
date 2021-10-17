@@ -24,7 +24,7 @@
 								Lista de registros
 							</div>
 							<div class="full-width panel-content">
-								<form action="#">
+								<form action="#" method="post">
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
 										<label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
 											<i class="zmdi zmdi-search"></i>
@@ -48,27 +48,27 @@
 
 										<a class="mdl-list__item-secondary-action" onclick=mostrar(<?php echo $r->IDVENTA; ?>)><i class="zmdi zmdi-more"></i></a>
 									</div>
-									<div class="mdl-list__item " id="transaccion<?php echo $r->IDVENTA; ?>" style="display:none;">
+									<div class="mdl-list__item " id="tt <?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Transaccion: "; ?> <?php echo $r->TT; ?></span>
 										</span>
 									</div>
-									<div class="mdl-list__item " id="sucursal<?php echo $r->IDVENTA; ?>" style="display:none;">
+									<div class="mdl-list__item " id="sucursal <?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Sucursal: "; ?> <?php echo $r->SUCURSAL; ?></span>
 										</span>
 									</div>
-									<div class="mdl-list__item " id="comprobante<?php echo $r->IDVENTA; ?>" style="display:none;">
+									<div class="mdl-list__item " id="compro <?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Comprobantel: "; ?> <?php echo $r->COMPRO; ?></span>
+											<span><?php echo "Comprobante : "; ?> <?php echo $r->COMPRO; ?></span>
 										</span>
 									</div>
-									<div class="mdl-list__item " id="formunico<?php echo $r->IDVENTA; ?>" style="display:none;">
+									<div class="mdl-list__item " id="nounico <?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Formulario Unico: "; ?> <?php echo $r->NOUNICO; ?></span>
 										</span>
 									</div>
-									<div class="mdl-list__item " id="fechadoc<?php echo $r->IDVENTA; ?>" style="display:none;">
+									<div class="mdl-list__item " id="fecha<?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Fecha documento: "; ?> <?php echo $r->FECHA; ?></span>
 										</span>
@@ -82,7 +82,14 @@
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Numero de serie: "; ?> <?php echo $r->SERIE	; ?></span>
 										</span>	
-									</div>									
+									</div>	
+
+									<div class="mdl-list__item " id="fecopera<?php echo $r->IDVENTA; ?>" style="display:none;">
+										<span class="mdl-list__item-primary-content">
+											<span><?php echo "Fecha de IVA: "; ?> <?php echo $r->FECOPERA; ?></span>
+										</span>
+									</div>
+
 									<div class="mdl-list__item " id="valor<?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Valor Gravado: "; ?> <?php echo $r->VALOR; ?></span>
@@ -103,7 +110,7 @@
 											<span><?php echo "IVA 2%: "; ?> <?php echo $r->IVA2; ?></span>
 										</span>
 									</div>
-									<div class="mdl-list__item " id="exento<?php echo $r->IDVENTA; ?>" style="display:none;">
+									<div class="mdl-list__item " id="exentas<?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
 											<span><?php echo "Valor Exento: "; ?> <?php echo $r->EXENTAS; ?></span>
 										</span>
@@ -123,11 +130,7 @@
 											<span><?php echo "Valor Total: "; ?> <?php echo $r->TOTAL; ?></span>
 										</span>
 									</div>
-									<div class="mdl-list__item " id="fecopera<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Fecha de IVA: "; ?> <?php echo $r->FECOPERA; ?></span>
-										</span>
-									</div>
+									
 									
 									<div class="mdl-list__item " id="usuario<?php echo $r->IDVENTA; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
@@ -150,7 +153,7 @@
 										</span>	
 									</div>
 									<p class="text-center">
-										<a href="#" >
+										<a href="?c=Ventas&a=Crud&id=<?php echo base64_encode($r->IDVENTA); ?>" >											
 											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"  id="editar<?php echo $r->IDVENTA; ?>" type="button" name="editar" style="display:none;">
 												<i class="zmdi zmdi-edit"></i>
 											</button>
@@ -172,13 +175,14 @@
 	</section>
 	<script>
 		function mostrar(id){
-			let transaccion = document.querySelector("#transaccion"+id);
+			let Transaccion = document.querySelector("#tt"+id);
 			let sucursal = document.querySelector("#sucursal"+id);
-			let comprobante = document.querySelector("#comprobante"+id);
-			let formulario unico = document.querySelector("#formunico"+id);
-			let fechadoc = document.querySelector("#fechadoc"+id);
+			let comprobante = document.querySelector("#compro"+id);
+			let formulario unico = document.querySelector("#nounico"+id);
+			let fechadoc = document.querySelector("#fecha"+id);
 			let registro = document.querySelector("#registro"+id);
 			let serie = document.querySelector("#serie"+id);
+			let fecopera = document.querySelector("#fecopera"+id);
 			let valor = document.querySelector("#valor"+id);
 			let iva13 = document.querySelector("#iva13"+id);
 			let iva1 = document.querySelector("#iva1"+id);
@@ -186,8 +190,7 @@
 			let exento = document.querySelector("#exento"+id);
 			let fovial = document.querySelector("#fovial"+id);
 			let cotran = document.querySelector("#cotran"+id);
-			let total = document.querySelector("#total"+id);
-			let fecopera = document.querySelector("#fecopera"+id);			
+			let total = document.querySelector("#total"+id);			
 			let usuario = document.querySelector("#usuario"+id);
 			let fechaope = document.querySelector("#fechaope"+id);
 			let maquina = document.querySelector("#maquina"+id);
@@ -206,20 +209,20 @@
 			if (estadoregistroventa){
 				transaccion.setAttribute("style","");
 				sucursal.setAttribute("style","");
-				comprobante.setAttribute("style","");
-				formunico.setAttribute("style","");
-				fechadoc.setAttribute("style","");
+				compro.setAttribute("style","");
+				nounico.setAttribute("style","");
+				fecha.setAttribute("style","");
 				registro.setAttribute("style","");
 				serie.setAttribute("style","");
+				fecopera.setAttribute("style","");
 				valor.setAttribute("style","");
 				iva13.setAttribute("style","");
 				iva1.setAttribute("style","");
 				iva2.setAttribute("style","");
-				exento.setAttribute("style","");
+				exentas.setAttribute("style","");
 				fovial.setAttribute("style","");
 				cotran.setAttribute("style","");
-				total.setAttribute("style","");
-				fecopera.setAttribute("style","");
+				total.setAttribute("style","");				
 				maquina.setAttribute("style","");
 				hora.setAttribute("style","");
 				editar.setAttribute("style","");
@@ -228,11 +231,12 @@
 			}else{
 				transaccion.setAttribute("style","display:none;");
 				sucursal.setAttribute("style","display:none;");
-				comprobante.setAttribute("style","display:none;");
-				formunico.setAttribute("style","display:none;");
-				fechadoc.setAttribute("style","display:none;");
+				compro.setAttribute("style","display:none;");
+				nounico.setAttribute("style","display:none;");
+				fecha.setAttribute("style","display:none;");
 				registro.setAttribute("style","display:none;");
 				serie.setAttribute("style","display:none;");
+				fecopera.setAttribute("style","display:none;");
 				valor.setAttribute("style","display:none;");
 				iva13.setAttribute("style","display:none;");
 				iva1.setAttribute("style","display:none;");
@@ -240,8 +244,7 @@
 				exento.setAttribute("style","display:none;");
 				fovial.setAttribute("style","display:none;");
 				cotran.setAttribute("style","display:none;");
-				total.setAttribute("style","display:none;");
-				fecopera.setAttribute("style","display:none;");
+				total.setAttribute("style","display:none;");				
 				maquina.setAttribute("style","display:none;");
 				hora.setAttribute("style","display:none;");
 				editar.setAttribute("style","display:none;");

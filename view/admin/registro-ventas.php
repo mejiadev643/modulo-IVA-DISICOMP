@@ -36,7 +36,7 @@ date_default_timezone_set("America/El_Salvador");
 										<input type="hidden" name="IDVENTA" value="<?php echo $Ventas->IDVENTA; ?>" />
 
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<p class="text-condensedLight">Transaccion</p>
+											<p class="text-condensedLight">Seleccione Transaccion</p>
 											<select class="custom-select" name="tt" required >
 												<option selected>Selección:</option>
 
@@ -71,11 +71,20 @@ date_default_timezone_set("America/El_Salvador");
 												<input type="date"  id="FECHA" name="FECHA" title="Digite fecha de documento">
 												
 											</div>
+
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="[0-9\-]+" id="REGISTRO" name="REGISTRO" title="Digite el numero de registro de cliente u proveedor">
-												<label class="mdl-textfield__label" for="registro">Numero de registro</label>
-												<span class="mdl-textfield__error">Numero de registro digitado no existe</span>
-											</div>
+											<p class="text-condensedLight">Seleccione Cliente/Proveedor
+											<select class="custom-select" name="registro" required >
+												<option selected>Selección:</option>
+
+											<?php foreach($this->model3->listarClientesProveedores() as $cli): ?>		
+																	
+		         									<option value="<?php echo $cli->CODTRAN; ?>"> <?php echo $cli->NOMBCLIENT; ?></option> 				
+								
+											<?php endforeach; ?>
+
+											</select></p>
+										</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text"  id="SERIE"  maxlength="13" name="SERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie" required>

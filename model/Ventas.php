@@ -141,6 +141,72 @@ class Ventas
 		}
 	}     
 
+public function ActualizarVentas($sale)
+	{
+		try 
+		{
+			$sql = "UPDATE Venta SET 
+						tt            = ?, 
+						TT            = ?,
+						SUCURSAL      = ?,
+						COMPRO        = ?,
+						NOUNICO       = ?,
+						FECHA         = ?,
+						REGISTRO      = ?,
+						SERIE         = ?,
+						VALOR         = ?,
+						IVA13         = ?,
+						IVA1          = ?,
+						IVA2          = ?,
+						EXENTAS       = ?,
+						FOVIAL        = ?,
+						COTRAN        = ?,
+						TOTAL         = ?,
+						FECOPERA      = ?,
+						USUARIO       = ?,
+						FECHAOPE      = ?,
+						MAQUINA       = ?,
+						HORA          = ?,
+				    WHERE IDVENTA = ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+                        $sale->TT,
+					$sale->SUCURSAL,
+					$sale->COMPRO,
+					$sale->NOUNICO,
+					$sale->FECHA,
+					$sale->REGISTRO,
+					$sale->SERIE,
+					$sale->VALOR,
+					$sale->IVA13,
+					$sale->IVA1,
+					$sale->IVA2,
+					$sale->EXENTAS,
+					$sale->FOVIAL,
+					$sale->COTRAN,
+					$sale->TOTAL,
+					$sale->FECOPERA,
+					$sale->USUARIO,
+					$sale->FECHAOPE,
+					$sale->MAQUINA,
+					$sale->HORA,
+					$sale->IDVENTA
+					)
+				);
+		}
+        catch (Throwable $t)//php7
+        {
+			die($t->getMessage());
+        }
+		catch(Exception $e)//php5
+		{
+			die($e->getMessage());
+		}
+	}
+
+
 }
 
 ?>

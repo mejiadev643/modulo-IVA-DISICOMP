@@ -67,6 +67,7 @@
                 <i class="zmdi zmdi-washing-machine tile-icon"></i>
             </article>
             <article class="full-width tile">
+                <a href="?c=Ventas&a=Guardar">
                 <div class="tile-text">
                     <span class="text-condensedLight">
 						47<br>

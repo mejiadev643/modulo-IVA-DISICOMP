@@ -1,9 +1,4 @@
-<?php
-date_default_timezone_set("America/El_Salvador");
-	$hora = date('H:i:s',time()); 
-	$fecha = date('Y-m-d', time());
-	$maquina = gethostname();
-?>
+
 	<!-- pageContent -->
 	<section class="full-width pageContent">
 		<section class="full-width header-well">
@@ -12,170 +7,161 @@ date_default_timezone_set("America/El_Salvador");
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					Edición de registros de IVA
+					Este formulario esta diseñado para Editar Registro de Ventas y Compras
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
-			<a href="?c=ClienteProveedor&a=Crud" class="mdl-tabs__tab is-active">Nuevo</a>
-           <a href="?c=ClienteProveedor&a=Consultar" class="mdl-tabs__tab">Listar</a>
+			<a href="?c=Ventas&a=Crud" class="mdl-tabs__tab is-active">Nuevo</a>
+           <a href="?c=Ventas&a=Consultar" class="mdl-tabs__tab">Listar</a>
 			</div>
 			<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								edición registros de IVA
+								Nuevo Registro de Ventas y Compras
 							</div>
 							<div class="full-width panel-content">
-								<form action="?c=ClienteProveedor&a=Guardar" method="post">
-											<h5 class="text-condensedLight text-center">Ingresar datos del Registro de IVA</h5>
+								<form action="?c=Ventas&a=ActualizarVentas" method="post">
+											<h5 class="text-condensedLight text-center">Ingresar datos del nuevo Registro de Ventas y Compras</h5>
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-										<input type="hidden" name="IDVENTA" value="<?php echo $ventas->IDVENTA; ?>" />
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9]+" id="compro" name="compro" value="<?php echo $ventas->COMPRO; ?>" title="Digite Numero de comprobante">
-												<label class="mdl-textfield__label" for="compro">Numero de comprobante</label>
-												<span class="mdl-textfield__error">No ha digitado comprobante</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin" name="NOMBCLIENT" value="<?php echo $clienteproveedor->NOMBCLIENT; ?>" title="Digite su nombre completo">
-												<label class="mdl-textfield__label" for="NameAdmin">Nombre Completo</label>
-												<span class="mdl-textfield__error">Invalid name</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="[A-Za-záéíóúÁÉÍÓÚ\ .]+" id="Denominacion" name="DENOMCLIENT" value="<?php echo $clienteproveedor->DENOMCLIENT; ?>" title="Digite la denominación">
-												<label class="mdl-textfield__label" for="Denominacion">Denominación</label>
-												<span class="mdl-textfield__error">Invalid Denominación</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9\-]+" id="registro" name="REGCLIENT" value="<?php echo $clienteproveedor->REGCLIENT; ?>" title="Digite registro de cliente">
-												<label class="mdl-textfield__label" for="registro">Registro de cliente</label>
-												<span class="mdl-textfield__error">Invalid registro</span>
-											</div>
+										<input type="hidden" name="IDVENTA" value="<?php echo $Ventas->IDVENTA; ?>" />
 											
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="[A-Za-záéíóúÁÉÍÓÚ\ .]+" id="direccion" name="DIRNEG" value="<?php echo $clienteproveedor->DIRNEG; ?>" title="Digite la dirección del negocio">
-												<label class="mdl-textfield__label" for="dirección">Dirección del negocio</label>
-												<span class="mdl-textfield__error">Invalid dirección del negocio</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="ciudad" name="CIUDAD" value="<?php echo $clienteproveedor->CIUDAD; ?>" title="Digite la ciudad del negocio">
-												<label class="mdl-textfield__label" for="ciudad">Ciudad del negocio</label>
-												<span class="mdl-textfield__error">Invalid ciudad del negocio</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="departamento" name="DEPTO" value="<?php echo $clienteproveedor->DEPTO; ?>" title="Digite el departamento del negocio">
-												<label class="mdl-textfield__label" for="departamento">Departamento del negocio</label>
-												<span class="mdl-textfield__error">Invalid departamento del negocio</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" id="telefono" name="TELEFONO" value="<?php echo $clienteproveedor->TELEFONO; ?>" pattern="[0-9\-]+" title="Digite su numero teléfono">
-												<label class="mdl-textfield__label" for="telefono">Numero de teléfono</label>
-												<span class="mdl-textfield__error">Invalid numero de teléfono</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="giro" name="GIRONEG" value="<?php echo $clienteproveedor->GIRONEG; ?>" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" title="Digite el giro de su negocio">
-												<label class="mdl-textfield__label" for="giro">Giro del negocio</label>
-												<span class="mdl-textfield__error">Invalid giro de negocio</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="[0-9]+" id="nit" name="NUMNIT" value="<?php echo $clienteproveedor->NUMNIT; ?>" title="Digite su numero de nit">
-												<label class="mdl-textfield__label" for="nit">Numero de Nit</label>
-												<span class="mdl-textfield__error">Invalid numero de nit</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<p class="text-condensedLight">Tipo de cliente</p>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-  													<input type="radio" id="option-1" class="mdl-radio__button" name="TIPOCLIENT" value="1" checked>
-  													<span class="mdl-radio__label">Cliente</span>
-												</label>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-  													<input type="radio" id="option-2" class="mdl-radio__button" name="TIPOCLIENT" value="2">
-  													<span class="mdl-radio__label">Proveedor</span>
-												</label>
-											</div>
-											
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<p class="text-condensedLight">Seleccione Transaccion</p>
+											<select class="custom-select" name="tt" value="<?php echo $Ventas->NOMBRE; ?>" required >
+												<option selected>Selección:</option>
+
+											<?php foreach($this->model2->listarTransiva() as $t): ?>
+																					
+																	
+		         									<option id="<?php echo $t->IDIVA; ?>"> <?php echo $t->NOMBRE; ?></option> 				
+								
+											<?php endforeach; ?>
+
+											</select>
 										</div>
-										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-											
-											
-											
-											
+
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="serie" name="NUMSERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie">
-												<label class="mdl-textfield__label" for="serie">Numero de Serie</label>
-												<span class="mdl-textfield__error">Invalid numero de serie</span>
+												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="sucursal" name="SUCURSAL" title="Digite código de sucursal" value="<?php echo $Ventas->SUCURSAL; ?>" required>
+												<label class="mdl-textfield__label" for="sucursal">Código de sucursal</label>
+												<span class="mdl-textfield__error">sucursal digitada invalida</span>
 											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="nombrenit" name="NOMBRENIT" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" title="Digite su nombre segun nit">
-												<label class="mdl-textfield__label" for="nombrenit">Nombre segun nit</label>
-												<span class="mdl-textfield__error">Invalid nombre</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<p class="text-condensedLight">Tipo de Documento</p>
-											<?php foreach($this->model2->listarTipoVenta() as $r): ?>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="<?php echo $r->IDCODIGO; ?>">
-  													<input type="radio" id="<?php echo $r->IDCODIGO; ?>" class="mdl-radio__button" name="TIPODOCUCRFCOF" value="<?php echo $r->CODIGO; ?>">
-  													<span class="mdl-radio__label"><?php echo $r->NOMBRE; ?></span>
-												</label>
-												<?php endforeach; ?>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<p class="text-condensedLight">Estado del cliente</p>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
-  													<input type="radio" id="option-6" class="mdl-radio__button" name="ESTADO" value="A" checked>
-  													<span class="mdl-radio__label">Activo</span>
-												</label>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-7">
-  													<input type="radio" id="option-7" class="mdl-radio__button" name="ESTADO" value="I">
-  													<span class="mdl-radio__label">Inactivo</span>
-												</label>
-											</div>
-											
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<p class="text-condensedLight">¿Emite formulario unico?</p>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-8">
-  													<input type="radio" id="option-8" class="mdl-radio__button" name="DOCUNICO" value="Si" checked>
-  													<span class="mdl-radio__label">Si</span>
-												</label>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-9">
-  													<input type="radio" id="option-9" class="mdl-radio__button" name="DOCUNICO" value="No">
-  													<span class="mdl-radio__label">No</span>
-												</label>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<p class="text-condensedLight">Gran Contribuyente</p>
-											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-10">
-  													<input type="radio" id="option-10" class="mdl-radio__button" name="GRANCONTRIB" value="S">
-  													<span class="mdl-radio__label">Si</span>
-												</label>
-												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-11">
-  													<input type="radio" id="option-11" class="mdl-radio__button" name="GRANCONTRIB" value="N" checked>
-  													<span class="mdl-radio__label">No</span>
-												</label>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" id="usuario" name="USUARIO" title="Este es el usuario que ara el registro" value="<?php echo $_SESSION["USERID"]; ?>">
-												<label class="mdl-textfield__label" for="dirección">Usuario que ara el registro</label>
-												<span class="mdl-textfield__error">Invalid usuario</span>
-											</div>
-											<input type="hidden" name="FECHAOPE" value="<?php echo $fecha?>" />
-											<input type="hidden" name="MAQUINA" value="<?php echo $maquina ?>" />
-											<input type="hidden" name="HORA" value="<?php echo date("g:i a", strtotime($hora)) ?>" />
 
 											
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="[0-9\-]+" id="nounico" name="NOUNICO" title="Digite numero de formulario Unico" value="<?php echo $Ventas->NOUNICO; ?>" required>
+												<label class="mdl-textfield__label" for="nounico">Numero de formulario Unico</label>
+												
+											</div>
+
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label for="fecha">Seleccione fecha</label>
+												<input type="date"  id="fecha" name="FECHA" title="Digite fecha de documento" value="<?php echo $Ventas->FECHA; ?>" required >							
+											</div>
+											
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<p class="text-condensedLight">Seleccione Cliente/Proveedor
+											<select class="custom-select" name="registro" value="<?php echo $Ventas->Registro; ?>" required >
+												<option selected>Selección:</option>
+
+											<?php foreach($this->model3->listarClientesProveedores() as $cli): ?>		
+																	
+		         									<option id="<?php echo $cli->IDIVA; ?>"> <?php echo $cli->NOMBCLIENT; ?></option> 				
+								
+											<?php endforeach; ?>
+
+											</select></p>
+										</div>
+										
+											
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text"  id="serie"  maxlength="13" name="SERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie" value="<?php echo $Ventas->SERIE; ?>"  required>
+												<label class="mdl-textfield__label" for="serie">Numero de Serie</label>
+												<span class="mdl-textfield__error">Numero de serie invalido</span>
+											</div>
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label for="valor">Fecha de Iva</label>
+												<input type="date" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="fecopera" name="FECOPERA" value="<?php echo $Ventas->fecopera; ?>"  required>
+												
+												<span class="mdl-textfield__error">seleccione fecha</span>
+											</div>	
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label for="valor" >Gran contribuyente: </label>
+												<i class="zmdi zmdi-circle-o" onclick=contrib() id="boton"></i>
+
+											</div>
+										</div><!--end of form left-->
+
+										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+											
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="valor" name="VALOR" title="Digite valor gravado" value="<?php echo $Ventas->valor; ?>" onkeyup=imprimevalor()  required>
+												<label class="mdl-textfield__label" for="valor">Valor gravado</label>
+												<span class="mdl-textfield__error">No ha digitado valor</span>
+											</div>
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva13" name="IVA13" title="Valor iva" value="<?php echo $Ventas->iva13; ?>" readonly required>
+												<label class="mdl-textfield__label" for="valor">Valor Iva 13 %</label>
+												<span class="mdl-textfield__error">No ha digitado valor</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva1" name="IVA1" title="valor retencion/percepcion" value="<?php echo $Ventas->iva1; ?>" readonly required>
+												<label class="mdl-textfield__label" for="valor">Valor retencion/percepcion</label>
+												<span class="mdl-textfield__error">No ha digitado valor</span>
+											</div>
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva2" name="iva2" title="valor retencion/percepcion" value="<?php echo $Ventas->iva2; ?>" onkeyup=imprimevalor() required>
+												<label class="mdl-textfield__label" for="valor">Valor retencion 2%</label>
+												<span class="mdl-textfield__error">No ha digitado valor</span>
+											</div>	
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="exentas" name="exentas" title="Valor exento" value="<?php echo $Ventas->exentas; ?>" onkeyup=imprimevalor() >
+												<label class="mdl-textfield__label" for="valor exento">Valor exento</label>
+												<span class="mdl-textfield__error">No ha digitado valor exento</span>
+											</div>
+																					
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="fovial" name="FOVIAL" title="valor fovial" value="<?php echo $Ventas->fovial; ?>" onkeyup=imprimevalor() required>
+												<label class="mdl-textfield__label" for="fovial">Valor fovial</label>
+												<span class="mdl-textfield__error">No ha digitado valor de fovial</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="cotran" name="cotran" title="valor cotran" value="<?php echo $Ventas->cotran; ?>" onkeyup=imprimevalor() required>
+												<label class="mdl-textfield__label" for="valor">Valor cotran</label>
+												<span class="mdl-textfield__error">No ha digitado valor de cotran</span>
+											</div>	
+										
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="vtotal" name="TOTAL" title="valor total" value="<?php echo $Ventas->total; ?>" readonly required>
+												<label class="mdl-textfield__label" for="valor">Valor Total documento</label>
+												
+											</div>						
+											
+											
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" id="usuario" name="USUARIO" title="Este es el usuario que  realiza el registro" value="<?php echo $Ventas->USUARIO; ?>">
+												<label class="mdl-textfield__label" for="usuario">Usuario que realiza el registro</label>
+												<span class="mdl-textfield__error">Usuario invalido</span>
+											</div>
 
 											<!-- Faltan datos segun casillas de formularios -->
 											
 										</div>
 									</div>
 									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin" type="submit" name="registrar">
+										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addVentas" type="submit" name="registrar">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">Add Administrator</div>
+										<div class="mdl-tooltip" for="btn-addVentas">Add Administrator</div>
 									</p>
 								</form>
 							</div>

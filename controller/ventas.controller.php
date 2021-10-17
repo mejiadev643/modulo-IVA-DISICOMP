@@ -12,6 +12,7 @@ require_once 'model/Ventas.php';
 require_once 'model/ConexionMovimientosDC.php';
 require_once 'model/ConexionComunDc.php';
 require_once 'model/Transiva.php';
+require_once 'model/ClienteProveedor.php';
 
 class VentasController{  
     
@@ -21,6 +22,7 @@ class VentasController{
         //inicializa el modelo Ventas
         $this->model = new Ventas();
         $this->model2 =new Transiva();
+        $this->model3 =new ClienteProveedor();
     }
        
     public function Index(){        
