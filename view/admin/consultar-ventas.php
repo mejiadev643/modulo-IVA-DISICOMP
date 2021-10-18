@@ -18,140 +18,124 @@
 			</div>
 			<div class="mdl-tabs__panel">
 				<div class="mdl-grid">
-					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
-						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-success text-center tittles">
-								Lista de registros
+								Lista de registros								
 							</div>
+
 							<div class="full-width panel-content">
-								<form action="#" method="post">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-										<label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
-											<i class="zmdi zmdi-search"></i>
-										</label>
-										<div class="mdl-textfield__expandable-holder">
-											<input class="mdl-textfield__input" type="text" id="searchAdmin">
-											<label class="mdl-textfield__label"></label>
-										</div>
-									</div>
-								</form>
-								<div class="mdl-list">
-								<?php $contador = 1; ?>
-                                <?php foreach($this->model->listarVentas() as $r): ?>
-                                    <li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span><?php echo $r->IDVENTA; ?>. <?php echo $r->COMPRO; ?></span>
+
+							<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+
+								<thead>
+								<th>TRANSACCION</th>
+								<th class="mdl-data-table__cell--non-numeric">PROVEEDOR</th>		
+								<th>COMPROBANTE</th>
+								<th>FORMULARIO UNICO</th>
+								<th>SERIE</th>
+								<th>FECHA</th>
+								<th>VALOR</th>
+								
+								</thead>
+									<tr>
+									<form  action="#">
+									
+										<?php $contador = 1; ?>
+		                                <?php foreach($this->model->listarVentas() as $r): ?>
+		                                   
+												<?php echo $r->IDVENTA; ?>. <?php echo $r->COMPRO; ?>
+
+												<a class="mdl-list__item-secondary-action" onclick=mostrar(<?php echo $r->IDVENTA; ?>)><i class="zmdi zmdi-more"></i></a>
+
+									
+
+										<td id="tt <?php echo $r->IDVENTA; ?>" style="display:none;">
+											<?php echo "Transaccion: "; ?> <?php echo $r->TT; ?>
+										</td>	
+
+										<td id="registro<?php echo $r->IDVENTA; ?>" style="display:none;">										
+											<?php echo "REGISTRO: "; ?> <?php echo $r->REGISTRO; ?>
+										</td>
+
+									<td id="compro <?php echo $r->IDVENTA; ?>" style="display:none;">
+											<?php echo "Comprobante : "; ?> <?php echo $r->COMPRO; ?>
+									</td>
+
+									<td id="nounico <?php echo $r->IDVENTA; ?>" style="display:none;">
+											<?php echo "Formulario Unico: "; ?> <?php echo $r->NOUNICO; ?>
+									</td>
+
+									<td id="serie<?php echo $r->IDVENTA; ?>" style="display:none;">
+											<?php echo "Numero de serie: "; ?> <?php echo $r->SERIE	; ?>	
+									</td>
+
+
+									<td id="fecha<?php echo $r->IDVENTA; ?>" style="display:none;">
+											<?php echo "Fecha documento: "; ?> <?php echo $r->FECHA; ?>
+									</td>
+
+									<td id="valor<?php echo $r->IDVENTA; ?>" style="display:none;">
+										<?php echo "Valor Gravado: "; ?> <?php echo $r->VALOR; ?>
+										
+									</td>
+									<td id="iva13<?php echo $r->IDVENTA; ?>" style="display:none;">
+										<?php echo "IVA 13%: "; ?> <?php echo $r->IVA13; ?>
+										
+									</td>
+
+									<td id="iva1<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "IVA 1%: "; ?> <?php echo $r->IVA1; ?>
+										
+									</td>
+									<td id="iva2<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "IVA 2%: "; ?> <?php echo $r->IVA2; ?>
+										
+									</td>
+									<td id="exentas<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Valor Exento: "; ?> <?php echo $r->EXENTAS; ?>
+										
+									</td>
+									<td id="fovial<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Valor Fovial: "; ?> <?php echo $r->FOVIAL; ?>
+										
+									</td>
+									<td id="cotran<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Valor Cotran: "; ?> <?php echo $r->COTRAN; ?>
+									</td>
+									<td id="total<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Valor Total: "; ?> <?php echo $r->TOTAL; ?>
+									</td>
+																		
+									<td id="usuario<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Usuario que lo registro: "; ?> <?php echo $r->USUARIO; ?>
+									</td>
+									<td  id="fechaope<?php echo $r->IDVENTA; ?>" style="display:none;">
+										<?php echo "Fecha del registro: "; ?> <?php echo $r->FECHAOPE; ?>
 											
-										</span>
+									</td>
+									<td id="maquina<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Maquina de donde se registro: "; ?> <?php echo $r->MAQUINA; ?>
+										
+									</td>
+									<td id="hora<?php echo $r->IDVENTA; ?>" style="display:none;">
+										
+											<?php echo "Hora en que se registro: "; ?> <?php echo $r->HORA; ?>
+										
+									</td>
+								</tr>
+							</tbody>
 
-										<a class="mdl-list__item-secondary-action" onclick=mostrar(<?php echo $r->IDVENTA; ?>)><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<div class="mdl-list__item " id="tt <?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Transaccion: "; ?> <?php echo $r->TT; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="sucursal <?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Sucursal: "; ?> <?php echo $r->SUCURSAL; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="compro <?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Comprobante : "; ?> <?php echo $r->COMPRO; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="nounico <?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Formulario Unico: "; ?> <?php echo $r->NOUNICO; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="fecha<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Fecha documento: "; ?> <?php echo $r->FECHA; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="registro<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "REGISTRO: "; ?> <?php echo $r->REGISTRO; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="serie<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Numero de serie: "; ?> <?php echo $r->SERIE	; ?></span>
-										</span>	
-									</div>	
 
-									<div class="mdl-list__item " id="fecopera<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Fecha de IVA: "; ?> <?php echo $r->FECOPERA; ?></span>
-										</span>
-									</div>
 
-									<div class="mdl-list__item " id="valor<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Valor Gravado: "; ?> <?php echo $r->VALOR; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="iva13<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "IVA 13%: "; ?> <?php echo $r->IVA13; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="iva1<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "IVA 1%: "; ?> <?php echo $r->IVA1; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="iva2<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "IVA 2%: "; ?> <?php echo $r->IVA2; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="exentas<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Valor Exento: "; ?> <?php echo $r->EXENTAS; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="fovial<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Valor Fovial: "; ?> <?php echo $r->FOVIAL; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="cotran<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Valor Cotran: "; ?> <?php echo $r->COTRAN; ?></span>
-										</span>
-									</div>
-									<div class="mdl-list__item " id="total<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Valor Total: "; ?> <?php echo $r->TOTAL; ?></span>
-										</span>
-									</div>
-									
-									
-									<div class="mdl-list__item " id="usuario<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Usuario que lo registro: "; ?> <?php echo $r->USUARIO; ?></span>
-										</span>	
-									</div>
-									<div class="mdl-list__item " id="fechaope<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Fecha del registro: "; ?> <?php echo $r->FECHAOPE; ?></span>
-										</span>	
-									</div>
-									<div class="mdl-list__item " id="maquina<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Maquina de donde se registro: "; ?> <?php echo $r->MAQUINA; ?></span>
-										</span>	
-									</div>
-									<div class="mdl-list__item " id="hora<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<span class="mdl-list__item-primary-content">
-											<span><?php echo "Hora en que se registro: "; ?> <?php echo $r->HORA; ?></span>
-										</span>	
-									</div>
+
 									<p class="text-center">
 										<a href="?c=Ventas&a=Crud&id=<?php echo base64_encode($r->IDVENTA); ?>" >											
 											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"  id="editar<?php echo $r->IDVENTA; ?>" type="button" name="editar" style="display:none;">
@@ -164,14 +148,7 @@
 									</p>
                                     <li class="full-width divider-menu-h"></li>
                                 <?php $contador++; endforeach; ?>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-            </div>
+                    </table>				
 	</section>
 	<script>
 		function mostrar(id){
