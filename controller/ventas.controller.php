@@ -39,15 +39,22 @@ class VentasController{
         
         if(isset($_REQUEST['id'])){
             //si tiene el parámetro asignado ejecutamos el método
-            $ventas = $this->model->obtenerventas($_REQUEST['id']);
-        }
+            $ventas = $this->model->ObtenerVentas(base64_decode($_REQUEST['id']));
 
         //llama todas las partes de la vista para guardar        
         # ventas
         require_once 'view/admin/header.php';
         require_once 'view/admin/notifications.php';
         require_once 'view/admin/navLateral.php';
-        require_once 'view/admin/registro-ventas.php';
+        require_once 'view/admin/editar-ventas.php';
+        }
+        else{
+
+        require_once 'view/admin/header.php';
+        require_once 'view/admin/notifications.php';
+        require_once 'view/admin/navLateral.php';
+        require_once 'view/admin/registro-ventas.php';    
+}
     }
 
     public function Guardar(){

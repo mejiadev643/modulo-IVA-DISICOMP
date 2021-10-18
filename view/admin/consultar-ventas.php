@@ -35,119 +35,68 @@
 								<th>SERIE</th>
 								<th>FECHA</th>
 								<th>VALOR</th>
+								<th>EDITAR</th>
+								<th>ELIMINAR</th>
 								
 								</thead>
+								<tbody>
 									<tr>
-									<form  action="#">
 									
 										<?php $contador = 1; ?>
 		                                <?php foreach($this->model->listarVentas() as $r): ?>
-		                                   
-												<?php echo $r->IDVENTA; ?>. <?php echo $r->COMPRO; ?>
 
-												<a class="mdl-list__item-secondary-action" onclick=mostrar(<?php echo $r->IDVENTA; ?>)><i class="zmdi zmdi-more"></i></a>
 
-									
-
-										<td id="tt <?php echo $r->IDVENTA; ?>" style="display:none;">
-											<?php echo "Transaccion: "; ?> <?php echo $r->TT; ?>
+										<td id="tt<?php echo $r->IDVENTA; ?>">
+											 <?php echo $r->TT; ?>
 										</td>	
 
-										<td id="registro<?php echo $r->IDVENTA; ?>" style="display:none;">										
-											<?php echo "REGISTRO: "; ?> <?php echo $r->REGISTRO; ?>
+										<td id="registro<?php echo $r->IDVENTA; ?>">										
+											<?php echo $r->REGISTRO; ?>
 										</td>
 
-									<td id="compro <?php echo $r->IDVENTA; ?>" style="display:none;">
-											<?php echo "Comprobante : "; ?> <?php echo $r->COMPRO; ?>
+									<td id="compro <?php echo $r->IDVENTA; ?>" >
+											<?php echo $r->COMPRO; ?>
 									</td>
 
-									<td id="nounico <?php echo $r->IDVENTA; ?>" style="display:none;">
-											<?php echo "Formulario Unico: "; ?> <?php echo $r->NOUNICO; ?>
+									<td id="nounico<?php echo $r->IDVENTA; ?>">
+											<?php echo (is_null($r->NOUNICO) )? $r->NOUNICO : "No aplica" ; ?>
 									</td>
 
-									<td id="serie<?php echo $r->IDVENTA; ?>" style="display:none;">
-											<?php echo "Numero de serie: "; ?> <?php echo $r->SERIE	; ?>	
+									<td id="serie<?php echo $r->IDVENTA; ?>">
+											<?php echo $r->SERIE	; ?>	
 									</td>
 
 
-									<td id="fecha<?php echo $r->IDVENTA; ?>" style="display:none;">
-											<?php echo "Fecha documento: "; ?> <?php echo $r->FECHA; ?>
+									<td id="fecha<?php echo $r->IDVENTA; ?>" >
+											<?php echo $r->FECHA; ?>
 									</td>
 
-									<td id="valor<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<?php echo "Valor Gravado: "; ?> <?php echo $r->VALOR; ?>
-										
-									</td>
-									<td id="iva13<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<?php echo "IVA 13%: "; ?> <?php echo $r->IVA13; ?>
-										
-									</td>
-
-									<td id="iva1<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "IVA 1%: "; ?> <?php echo $r->IVA1; ?>
-										
-									</td>
-									<td id="iva2<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "IVA 2%: "; ?> <?php echo $r->IVA2; ?>
-										
-									</td>
-									<td id="exentas<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Valor Exento: "; ?> <?php echo $r->EXENTAS; ?>
-										
-									</td>
-									<td id="fovial<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Valor Fovial: "; ?> <?php echo $r->FOVIAL; ?>
-										
-									</td>
-									<td id="cotran<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Valor Cotran: "; ?> <?php echo $r->COTRAN; ?>
-									</td>
-									<td id="total<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Valor Total: "; ?> <?php echo $r->TOTAL; ?>
+									
+									<td id="total<?php echo $r->IDVENTA; ?>" >
+											<?php echo $r->TOTAL; ?>
 									</td>
 																		
-									<td id="usuario<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Usuario que lo registro: "; ?> <?php echo $r->USUARIO; ?>
-									</td>
-									<td  id="fechaope<?php echo $r->IDVENTA; ?>" style="display:none;">
-										<?php echo "Fecha del registro: "; ?> <?php echo $r->FECHAOPE; ?>
-											
-									</td>
-									<td id="maquina<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Maquina de donde se registro: "; ?> <?php echo $r->MAQUINA; ?>
-										
-									</td>
-									<td id="hora<?php echo $r->IDVENTA; ?>" style="display:none;">
-										
-											<?php echo "Hora en que se registro: "; ?> <?php echo $r->HORA; ?>
-										
-									</td>
-								</tr>
-							</tbody>
-
-
-
-
-									<p class="text-center">
+									<td>
+										<p class="text-center">
 										<a href="?c=Ventas&a=Crud&id=<?php echo base64_encode($r->IDVENTA); ?>" >											
-											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"  id="editar<?php echo $r->IDVENTA; ?>" type="button" name="editar" style="display:none;">
+											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"  id="editar<?php echo $r->IDVENTA; ?>" type="button" name="editar">
 												<i class="zmdi zmdi-edit"></i>
 											</button>
 										</a>
-											<button onclick= elimina('<?php echo base64_encode($r->IDVENTA); ?>') class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab  mdl-button--accent" id="eliminar<?php echo $r->IDVENTA; ?>" type="button"   name="eliminar" style="display:none;">
+									</p>
+									</td>
+									<td>
+										<p class="text-center">
+										<button onclick= elimina('<?php echo base64_encode($r->IDVENTA); ?>') class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab  mdl-button--accent" id="eliminar<?php echo $r->IDVENTA; ?>" type="button"   name="eliminar">
 												<i class="zmdi zmdi-delete"></i>
 											</button>
 									</p>
-                                    <li class="full-width divider-menu-h"></li>
+									</td>
+								</tr>
+							
                                 <?php $contador++; endforeach; ?>
+                             </tbody>
+
                     </table>				
 	</section>
 	<script>

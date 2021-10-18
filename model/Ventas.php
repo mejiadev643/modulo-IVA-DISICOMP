@@ -50,6 +50,25 @@ class Ventas
 	public $llavec;
 	
 
+	 public $SUCURSAL;
+	 public $TT;
+	 public $REGISTRO;
+	 public $COMPRO;
+	 public $NOUNICO;
+	 public $SERIE;
+	 public $FECHA;
+	 public $FECHAOPE;
+	 public $VALOR;
+	 public $IVA13;
+	 public $IVA1;
+	 public $IVA2;
+	 public $EXENTAS;
+	 public $FOVIAL;
+	 public $COTRAN;
+	 public $TOTAL;
+	 public $IDVENTA;
+
+
 	public function __CONSTRUCT()
 	{
 		try
@@ -128,6 +147,23 @@ class Ventas
 			die($e->getMessage());
 		}
 	} 
+
+public function ObtenerVentas($id){
+		try {
+			$stm = $this->pdo->prepare("SELECT * FROM Venta WHERE IDVENTA = ?");
+			$stm->execute(array($id));
+
+			return $stm->fetch(PDO::FETCH_OBJ);
+
+		} catch (\Throwable $th) {
+			echo $th;
+		}
+
+	}
+
+
+
+
 	public function eliminarVentas($sale){
 		
 		
@@ -146,7 +182,7 @@ public function ActualizarVentas($sale)
 		try 
 		{
 			$sql = "UPDATE Venta SET 
-						tt            = ?, 
+						 
 						TT            = ?,
 						SUCURSAL      = ?,
 						COMPRO        = ?,
@@ -172,7 +208,7 @@ public function ActualizarVentas($sale)
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-                        $sale->TT,
+                    $sale->TT,
 					$sale->SUCURSAL,
 					$sale->COMPRO,
 					$sale->NOUNICO,
@@ -206,6 +242,19 @@ public function ActualizarVentas($sale)
 		}
 	}
 
+public function obtenerNombre($id){
+		try {
+			$stm = $this->pdo->prepare("SELECT NOMBRE FROM Transaciva WHERE CODTRAN = ?");
+			$stm->execute(array($id));
+
+			return $stm->fetch(PDO::FETCH_OBJ);
+
+		} catch (\Throwable $th) {
+			echo $th;
+		}
+
+
+	}
 
 }
 

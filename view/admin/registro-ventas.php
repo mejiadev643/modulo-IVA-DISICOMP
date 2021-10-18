@@ -33,17 +33,17 @@ date_default_timezone_set("America/El_Salvador");
 								<form action="?c=Ventas&a=Guardar" method="post">
 									<div class="mdl-grid">
 									<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-										<input type="hidden" name="IDVENTA" value="<?php echo $Ventas->IDVENTA; ?>" />
+										<input type="hidden" name="IDVENTA" value="<?php echo $ventas->IDVENTA; ?>" />
 
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Seleccione Transaccion</p>
-											<select class="custom-select" name="tt" required >
+											<select class="custom-select" name="TT" required >
 												<option selected>Selección:</option>
 
 											<?php foreach($this->model2->listarTransiva() as $t): ?>
 																					
 																	
-		         									<option id="<?php echo $t->IDIVA; ?>"> <?php echo $t->NOMBRE; ?></option> 				
+		         									<option value="<?php echo $t->CODTRAN; ?>"> <?php echo $t->NOMBRE; ?></option> 				
 								
 											<?php endforeach; ?>
 
@@ -63,6 +63,7 @@ date_default_timezone_set("America/El_Salvador");
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="[0-9\-]+" id="NOUNICO" name="NOUNICO" title="Digite numero de formulario Unico">
+
 												<label class="mdl-textfield__label" for="NOUNICO">Numero de formulario Unico</label>
 												<span class="mdl-textfield__error">No ha digitado comprobante de formulario unico</span>
 											</div>
@@ -74,12 +75,12 @@ date_default_timezone_set("America/El_Salvador");
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Seleccione Cliente/Proveedor
-											<select class="custom-select" name="registro" required >
+											<select class="custom-select" name="REGISTRO" required >
 												<option selected>Selección:</option>
 
 											<?php foreach($this->model3->listarClientesProveedores() as $cli): ?>		
 																	
-		         									<option value="<?php echo $cli->CODTRAN; ?>"> <?php echo $cli->NOMBCLIENT; ?></option> 				
+		         									<option value="<?php echo $cli->CODCLIENT; ?>"> <?php echo $cli->NOMBCLIENT; ?></option> 				
 								
 											<?php endforeach; ?>
 

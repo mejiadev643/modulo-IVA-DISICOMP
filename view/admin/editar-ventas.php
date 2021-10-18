@@ -25,21 +25,28 @@
 							</div>
 							<div class="full-width panel-content">
 								<form action="?c=Ventas&a=ActualizarVentas" method="post">
-											<h5 class="text-condensedLight text-center">Ingresar datos del nuevo Registro de Ventas y Compras</h5>
+											<h5 class="text-condensedLight text-center">Editar Registro de Ventas y Compras</h5>
+
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-										<input type="hidden" name="IDVENTA" value="<?php echo $Ventas->IDVENTA; ?>" />
+										<input type="hidden" name="IDVENTA" value="<?php echo $ventas->IDVENTA; ?>" />
 											
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Seleccione Transaccion</p>
-											<select class="custom-select" name="tt" value="<?php echo $Ventas->NOMBRE; ?>" required >
-												<option selected>Selección:</option>
+											<select class="custom-select" name="tt"  required >
+												
 
 											<?php foreach($this->model2->listarTransiva() as $t): ?>
 																					
 																	
-		         									<option id="<?php echo $t->IDIVA; ?>"> <?php echo $t->NOMBRE; ?></option> 				
-								
+		         									<option value="<?php echo $t->CODTRAN; ?>" <?php  
+		         										if ($t->CODTRAN == $ventas->TT) {
+		         											echo "selected";
+		         										}
+		         									?> >
+		         										<?php echo $t->NOMBRE; ?>
+		         									</option> 	
+
 											<?php endforeach; ?>
 
 											</select>
