@@ -128,12 +128,12 @@ date_default_timezone_set("America/El_Salvador");
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva2" name="iva2" title="valor retencion/percepcion" value="0.00" onkeyup=imprimevalor() required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="iva2" name="IVA2" title="valor retencion/percepcion" value="0.00" onkeyup=imprimevalor() required>
 												<label class="mdl-textfield__label" for="valor">Valor retencion 2%</label>
 												<span class="mdl-textfield__error">No ha digitado valor</span>
 											</div>	
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="exentas" name="exentas" title="Valor exento" value="0.00" onkeyup=imprimevalor() >
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="exentas" name="EXENTAS" title="Valor exento" value="0.00" onkeyup=imprimevalor() >
 												<label class="mdl-textfield__label" for="valor exento">Valor exento</label>
 												<span class="mdl-textfield__error">No ha digitado valor exento</span>
 											</div>
@@ -144,7 +144,7 @@ date_default_timezone_set("America/El_Salvador");
 												<span class="mdl-textfield__error">No ha digitado valor de fovial</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="cotran" name="cotran" title="valor cotran" value="0.00" onkeyup=imprimevalor() required>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="cotran" name="COTRAN" title="valor cotran" value="0.00" onkeyup=imprimevalor() required>
 												<label class="mdl-textfield__label" for="valor">Valor cotran</label>
 												<span class="mdl-textfield__error">No ha digitado valor de cotran</span>
 											</div>	

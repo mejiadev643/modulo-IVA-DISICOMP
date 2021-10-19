@@ -177,7 +177,7 @@ public function ObtenerVentas($id){
 		}
 	}     
 
-public function ActualizarVentas($sale)
+public function modificarventas($sale)
 	{
 		try 
 		{
@@ -202,8 +202,8 @@ public function ActualizarVentas($sale)
 						USUARIO       = ?,
 						FECHAOPE      = ?,
 						MAQUINA       = ?,
-						HORA          = ?,
-				    WHERE IDVENTA = ?";
+						HORA          = ?
+				    WHERE IDVENTA = ?" ;
 
 			$this->pdo->prepare($sql)
 			     ->execute(

@@ -27,7 +27,7 @@ class VentasController{
        
     public function Index(){        
         # ventas
-        require_once 'view/admin/header.php';
+         require_once 'view/admin/header.php';
         require_once 'view/admin/notifications.php';
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/home.php';
@@ -54,7 +54,7 @@ class VentasController{
         require_once 'view/admin/notifications.php';
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/registro-ventas.php';    
-}
+        }
     }
 
     public function Guardar(){
