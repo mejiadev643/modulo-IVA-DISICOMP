@@ -1,4 +1,3 @@
-
     <!-- pageContent -->
     <section class="full-width pageContent">
         <section class="full-width text-center" style="padding: 40px 0;">
@@ -22,55 +21,63 @@
                     <i class="zmdi zmdi-account tile-icon"></i>
                 </a>
             </article>
+
             <article class="full-width tile">
-            <a href="?c=ClienteProveedor&a=Guardar">
+
+            <a href="?c=ClienteProveedor&a=Consultar">
+
                 <div class="tile-text">
                     <span class="text-condensedLight">
-                    
-						71<br>
-                       
-						<small>Clientes</small>
-                   
+						1<br>
+						<small>Clientes y Proveedores</small>
 					</span>
                     
                 </div>
                 <i class="zmdi zmdi-accounts tile-icon"></i>
             </a>
             </article>
+
             <article class="full-width tile">
-            <a href="?c=ClienteProveedor&a=Guardar">
+
+            <a href="?c=ClienteProveedor&a=Consultar">
+
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						7<br>
-						<small>Proveedores</small>
+						<br>
+						<small>Empresa</small>
 					</span>
                 </div>
-                <i class="zmdi zmdi-truck tile-icon"></i>
+                <i class="zmdi zmdi-balance tile-icon"></i>
             </a>
             </article>
+
             <article class="full-width tile">
-                <div class="tile-text">
+                <a href="?c=Transiva&a=Crud">
+                    <div class="tile-text">
                     <span class="text-condensedLight">
-						9<br>
-						<small>Categorias</small>
-					</span>
+                        <br>
+                        <span class="text-condensedLight">
+                            <small>Transacciones IVA</small>
+                        </span>
+                    </span>
                 </div>
-                <i class="zmdi zmdi-label tile-icon"></i>
+                    <i class="zmdi zmdi-card tile-icon"></i>
+                </a>
             </article>
+
             <article class="full-width tile">
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						121<br>
+						<br>
 						<small>Productos</small>
 					</span>
                 </div>
                 <i class="zmdi zmdi-washing-machine tile-icon"></i>
             </article>
             <article class="full-width tile">
-                <a href="?c=Ventas&a=Guardar">
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						47<br>
+						<br>
 						<small>Ventas</small>
 					</span>
                 </div>
@@ -79,5 +86,6 @@
         </section>
     </section>
 </body>
+
 
 </html>

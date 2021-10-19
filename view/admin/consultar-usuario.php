@@ -47,8 +47,7 @@
 											<span class="mdl-list__item-sub-title"><?php echo $r->USERID; ?></span>
 										</span>
 										<a class="mdl-list__item-secondary-action" onclick=mostrar(<?php echo $r->IDLOGIN; ?>)><i class="zmdi zmdi-more"></i></a>
-										
-										
+
 									</div>
 									<div class="mdl-list__item " id="cargo<?php echo $r->IDLOGIN; ?>" style="display:none;">
 										<span class="mdl-list__item-primary-content">
