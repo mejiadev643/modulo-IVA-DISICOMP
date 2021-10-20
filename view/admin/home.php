@@ -27,8 +27,14 @@
             <a href="?c=ClienteProveedor&a=Consultar">
 
                 <div class="tile-text">
+                  <?php
+                    $proveedor=0;
+                    foreach ($this->cliente->listarClientesProveedores() as $r){
+                            $proveedor++;
+                    }
+                  ?>
                     <span class="text-condensedLight">
-						1<br>
+						 <?php echo $proveedor; ?> <br>
 						<small>Clientes y Proveedores</small>
 					</span>
                     
@@ -75,13 +81,16 @@
                 <i class="zmdi zmdi-washing-machine tile-icon"></i>
             </article>
             <article class="full-width tile">
-                <div class="tile-text">
-                    <span class="text-condensedLight">
-						<br>
-						<small>Ventas</small>
-					</span>
-                </div>
-                <i class="zmdi zmdi-shopping-cart tile-icon"></i>
+                <a href="?c=Ventas&a=Consultar">
+
+                    <div class="tile-text">
+                        <span class="text-condensedLight">
+						  <br>
+						  <small>Ventas</small>
+					   </span>
+                    </div>
+                    <i class="zmdi zmdi-shopping-cart tile-icon"></i>
+                </a>
             </article>
         </section>
     </section>
