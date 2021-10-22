@@ -10,16 +10,19 @@
 #utilizaremos la clase Usuario para encontrar el total de usuarios
 require_once 'model/Usuario.php';
 require_once 'model/ClienteProveedor.php';
+require_once 'model/Transiva.php';
 
 class PrincipalController{
     
     private $admin;
     private $cliente;
+    private $transiva;
     
     public function __CONSTRUCT(){
         //inicializa el modelo Usuario para usar el metodo listar usuario
         $this->admin= new Usuario();
         $this->cliente = new ClienteProveedor();
+        $this->transiva = new Transiva();
     }
        
     public function Index(){    

@@ -60,11 +60,15 @@
             <article class="full-width tile">
                 <a href="?c=Transiva&a=Crud">
                     <div class="tile-text">
+                        <?php
+                    $transac=0;
+                    foreach ($this->transiva->listarTransiva() as $r){
+                            $transac++;
+                    }
+                  ?>
                     <span class="text-condensedLight">
-                        <br>
-                        <span class="text-condensedLight">
-                            <small>Transacciones IVA</small>
-                        </span>
+                         <?php echo $transac; ?> <br>
+                        <small>Transacciones IVA</small>
                     </span>
                 </div>
                     <i class="zmdi zmdi-card tile-icon"></i>
