@@ -25,7 +25,7 @@
 
 							<div class="full-width panel-content">
 
-							<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+							<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive" id="Listar">
 
 								<thead>
 								<th>TRANSACCION</th>
@@ -187,5 +187,10 @@
 		}
 		
 	</script>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	  <script src="materializecss/js/materialize.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/dataTable.js"></script>
 </body>
 </html>

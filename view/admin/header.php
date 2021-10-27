@@ -25,4 +25,12 @@
 	<script src="materializecss/js/sweetalert2.min.js" ></script>
 	<script src="materializecss/js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="materializecss/js/main.js" ></script>
+
+	<script rel="stylesheet" src="materializecss/css/materialize.min.css" ></script>
+	<script rel="stylesheet" src="materializecss/css/jquery.dataTables.min.css" ></script>
+	<script rel="stylesheet" src="materializecss/css/style2.css" ></script>
+	<script rel="stylesheet" src="materializecss/css/icon.css" ></script>
+	<script src="materializecss/js/materialize.min.css" ></script>
+
+
 </head>
