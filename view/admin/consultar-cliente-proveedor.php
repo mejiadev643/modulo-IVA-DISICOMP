@@ -35,7 +35,7 @@
 										</div>
 									</div>
 								</form>
-								<div class="mdl-list">
+								<div class="mdl-list" >
 								<?php $contador = 1; ?>
                                 <?php foreach($this->model->listarClientesProveedores() as $r): ?>
                                     <li class="full-width divider-menu-h"></li>
@@ -244,5 +244,6 @@
 		}
 		
 	</script>
+
 </body>
 </html>
