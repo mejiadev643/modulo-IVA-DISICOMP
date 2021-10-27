@@ -12,6 +12,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Administrador</title>
+
+	<link href="mat/icon.css" rel="stylesheet">
+	<link href="mat/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!-- <link href="mat/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="mat/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+-->
+
+
+
 	<link rel="stylesheet" href="materializecss/css/normalize.css">
 	<link rel="stylesheet" href="materializecss/css/sweetalert2.css">
 	<link rel="stylesheet" href="materializecss/css/material.min.css">
@@ -26,11 +36,7 @@
 	<script src="materializecss/js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="materializecss/js/main.js" ></script>
 
-	<script rel="stylesheet" src="materializecss/css/materialize.min.css" ></script>
-	<script rel="stylesheet" src="materializecss/css/jquery.dataTables.min.css" ></script>
-	<script rel="stylesheet" src="materializecss/css/style2.css" ></script>
-	<script rel="stylesheet" src="materializecss/css/icon.css" ></script>
-	<script src="materializecss/js/materialize.min.css" ></script>
+
 
 
 </head>

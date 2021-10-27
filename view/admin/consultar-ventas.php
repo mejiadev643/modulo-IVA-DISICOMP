@@ -189,7 +189,7 @@
 	</script>
 
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	  <script src="materializecss/js/materialize.js"></script>
+	<script src="js/materialize.js"></script>
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/dataTable.js"></script>
 </body>
