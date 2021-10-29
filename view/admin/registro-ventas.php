@@ -183,5 +183,29 @@ date_default_timezone_set("America/El_Salvador");
 		</div>
 	</section>
 	<script type="text/javascript" src="js/calculos.js"></script>
+	<script type="text/javascript">
+		<?php 
+
+			$prov = $this->model3->listarClientesProveedores();
+		?>
+
+		 var str = <?php echo json_encode($prov);  ?>;
+		 
+		 //console.log("saasd");
+		 //console.log(str[1].NOMBCLIENT);
+		 nombre = "pepito";
+		 
+		 for (i in str){
+		 
+		 	//console.log(str[i].NOMBCLIENT);
+		 	if (str[i].NOMBCLIENT == nombre){
+		  		console.log("se encontro a "+ str[i].NOMBCLIENT);
+		  	}else{
+		  		console.log("no se encontro");
+		  	}
+
+		 
+		 }
+	</script>
 </body>
 </html>
