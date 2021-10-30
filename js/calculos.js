@@ -1,4 +1,5 @@
-var contador = 0; // variable para conocer si el usuario es gran contibuyente o no, se utiliza en los modulos de grancontrib() y contrib();
+var contador = 0 ; // variable para conocer si el usuario es gran contibuyente o no, se utiliza en los modulos de grancontrib() y contrib();
+var GC = 0 ; 
 
 function imprimevalor(){
 /*Esta funcion desencadena una reaccion con las demas funciones para recibir los valores de los inputs
@@ -60,15 +61,18 @@ function grancontri(val){
 			
 	if(contador == 1 ){
 
+		let grande = document.querySelector("#boton");//boton que cambiaremos de apariencia
 
 		if (valor.toFixed(2) >= 100.00) {
 
 			total = ((val*1)/100).toFixed(2);
+			grande.className = "zmdi zmdi-check";//cambiamos el icono a checkeado
 
 			contrib.value = total;
 
 		}else{
 
+			grande.className = "zmdi zmdi-circle-o";
 			total = "0.00";
 			contrib.value = total;
 			// console.log("pasa por else");
@@ -94,7 +98,7 @@ function contrib(){
 	una seleccion de los inputs y el boton correspondientes a lo que vamos a trabajar
 	Se ha mejorado para evaluar si el contribuyente hace una compra de mas de 100 dolares para aplicar un descuento
 	*/
-	grande = document.querySelector("#boton");//boton que cambiaremos de apariencia
+	let grande = document.querySelector("#boton");//boton que cambiaremos de apariencia
 	let contrib = document.querySelector("#iva1");//input que manipularemos
 
 	let val = parseFloat(document.querySelector("#valor").value);// valor de entrada de la factura
@@ -103,7 +107,7 @@ function contrib(){
 
 		let evaluar = parseFloat(contrib.value);// variable utilizada para conocer si hay un valor diferente a 0.00 dolares
 		//console.log(evaluar);
-
+		console.log(GC);
 		if (evaluar.toFixed(2) == 0.00){// si el valor de contrib,value es 0.00
 
 			grande.className = "zmdi zmdi-check";//cambiamos el icono a checkeado

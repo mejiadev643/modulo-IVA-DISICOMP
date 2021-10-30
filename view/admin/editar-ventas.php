@@ -86,24 +86,26 @@ $maquina = gethostname();
 											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Seleccione Cliente/Proveedor
-											<select class="custom-select" name="REGISTRO" value="<?php echo $ventas->REGISTRO; ?>" required >
+											<select onchange=Verificar() class="custom-select" id="ClienteP" required >
 											
 											<?php foreach($this->model3->listarClientesProveedores() as $cli): ?>		
 																	
-		         									<option id="<?php echo $cli->CODCLIENT; ?>" <?php  
+		         									<option value="<?php echo $cli->CODCLIENT; ?>" <?php  
 		         										if ($cli->CODCLIENT == $ventas->REGISTRO) {
 		         											echo "selected";
+
 		         										}
 		         									?>> <?php echo $cli->NOMBCLIENT; ?></option> 				
 								
 											<?php endforeach; ?>
+
 
 											</select></p>
 										</div>
 										
 											
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="serie"  maxlength="13" name="SERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie" value="<?php echo $ventas->SERIE; ?>"  required>
+												<input class="mdl-textfield__input" type="text"  id="SERIE"  maxlength="13" name="SERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie" value="<?php echo $ventas->SERIE; ?>"  required>
 												
 												<span class="mdl-textfield__error">Numero de serie invalido</span>
 											</div>
@@ -117,7 +119,7 @@ $maquina = gethostname();
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<label for="valor" >Gran contribuyente: </label>
-												<i class="zmdi zmdi-circle-o" onclick=contrib() id="boton"></i>
+												<i class="zmdi zmdi-circle-o" id="boton"></i>
 
 											</div>
 										</div><!--end of form left-->
@@ -199,5 +201,18 @@ $maquina = gethostname();
 			</div>
 	</section>
 	<script type="text/javascript" src="js/calculos.js"></script>
+	<script type="text/javascript">
+		<?php 
+
+			$prov = $this->model3->listarDatosClienProv();
+		?>
+
+		 var str = <?php echo json_encode($prov);  ?>;
+
+	</script>
+	<script type="text/javascript" src="js/procesos.js"></script>
+	<script>
+	Window.onLoad = Verificar();//ejecuta una comprobacion para efectuar automaticamente descuentos si es que hay
+	</script>
 </body>
 </html>	
