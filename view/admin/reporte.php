@@ -15,37 +15,37 @@ $hojaActiva->setTitle("Reporte");
 
 $hojaActiva->getColumnDimension("A")->setWidth(10);
 $hojaActiva->setCellValue("A1", "CORRELA");
-$hojaActiva->getColumnDimension("B")->setWidth(11);
+$hojaActiva->getColumnDimension("B")->setWidth(20);
 $hojaActiva->setCellValue("B1", "FECHA");
-$hojaActiva->getColumnDimension("C")->setWidth(10);
+$hojaActiva->getColumnDimension("C")->setWidth(20);
 $hojaActiva->setCellValue("C1", "COMPRO");
-$hojaActiva->getColumnDimension("D")->setWidth(10);
+$hojaActiva->getColumnDimension("D")->setWidth(20);
 $hojaActiva->setCellValue("D1", "REGISTRO");
 $hojaActiva->getColumnDimension("E")->setWidth(30);
 $hojaActiva->setCellValue("E1", "NOMBRE");
-$hojaActiva->getColumnDimension("F")->setWidth(15);
+$hojaActiva->getColumnDimension("F")->setWidth(25);
 $hojaActiva->setCellValue("F1", "EXEINTERNA");
-$hojaActiva->getColumnDimension("G")->setWidth(15);
+$hojaActiva->getColumnDimension("G")->setWidth(25);
 $hojaActiva->setCellValue("G1", "EXEIMPORTA");
-$hojaActiva->getColumnDimension("H")->setWidth(15);
+$hojaActiva->getColumnDimension("H")->setWidth(25);
 $hojaActiva->setCellValue("H1", "GRAINTERNA");
-$hojaActiva->getColumnDimension("I")->setWidth(15);
+$hojaActiva->getColumnDimension("I")->setWidth(25);
 $hojaActiva->setCellValue("I1", "GRAIMPORTA");
-$hojaActiva->getColumnDimension("J")->setWidth(10);
+$hojaActiva->getColumnDimension("J")->setWidth(20);
 $hojaActiva->setCellValue("J1", "IVA");
-$hojaActiva->getColumnDimension("K")->setWidth(10);
+$hojaActiva->getColumnDimension("K")->setWidth(20);
 $hojaActiva->setCellValue("K1", "IVA3");
-$hojaActiva->getColumnDimension("L")->setWidth(10);
+$hojaActiva->getColumnDimension("L")->setWidth(20);
 $hojaActiva->setCellValue("L1", "IVA2");
-$hojaActiva->getColumnDimension("M")->setWidth(10);
+$hojaActiva->getColumnDimension("M")->setWidth(20);
 $hojaActiva->setCellValue("M1", "TOTALCOMPR");
-$hojaActiva->getColumnDimension("N")->setWidth(10);
+$hojaActiva->getColumnDimension("N")->setWidth(20);
 $hojaActiva->setCellValue("N1", "RETETERCE");
-$hojaActiva->getColumnDimension("O")->setWidth(10);
+$hojaActiva->getColumnDimension("O")->setWidth(20);
 $hojaActiva->setCellValue("O1", "COMPRATERC");
-$hojaActiva->getColumnDimension("P")->setWidth(10);
+$hojaActiva->getColumnDimension("P")->setWidth(20);
 $hojaActiva->setCellValue("P1", "FOVIAL");
-$hojaActiva->getColumnDimension("Q")->setWidth(10);
+$hojaActiva->getColumnDimension("Q")->setWidth(20);
 $hojaActiva->setCellValue("Q1", "COTRAN");
 $hojaActiva->getColumnDimension("R")->setWidth(30);
 $hojaActiva->setCellValue("R1", "NIT");
@@ -58,12 +58,6 @@ foreach ($this->model->ReporteVentaExcel() as $r) :
     $hojaActiva->setCellValue("B" . $fila, $r->FECHA);
     $hojaActiva->setCellValue("C" . $fila, $r->COMPRO);
     $hojaActiva->setCellValue("D" . $fila, $r->REGISTRO);
-    foreach ($this->model3->listarClientesProveedores() as $c) :
-        if ($r->REGISTRO == $c->CODCLIENT) {
-            $hojaActiva->setCellValue("E" . $fila, $c->NOMBCLIENT);
-            $hojaActiva->setCellValue("R" . $fila, $c->NUMNIT);
-        }
-    endforeach;
     $hojaActiva->setCellValue("F" . $fila, $vacio);
     $hojaActiva->setCellValue("G" . $fila, $vacio);
     $hojaActiva->setCellValue("H" . $fila, $r->VALOR);
@@ -76,6 +70,12 @@ foreach ($this->model->ReporteVentaExcel() as $r) :
     $hojaActiva->setCellValue("O" . $fila, $vacio);
     $hojaActiva->setCellValue("P" . $fila, $r->FOVIAL);
     $hojaActiva->setCellValue("Q" . $fila, $r->COTRAN);
+    foreach ($this->model3->listarClientesProveedores() as $c) :
+        if ($r->REGISTRO == $c->CODCLIENT) {
+            $hojaActiva->setCellValue("E" . $fila, $c->NOMBCLIENT);
+            $hojaActiva->setCellValue("R" . $fila, $c->NUMNIT);
+        }
+    endforeach;
     
 $fila++;
 
