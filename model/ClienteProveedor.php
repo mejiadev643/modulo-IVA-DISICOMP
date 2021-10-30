@@ -132,6 +132,35 @@ class ClienteProveedor
 			die($e->getMessage());
 		}
 	}
+
+
+	public function listarDatosClienProv()
+	{
+		try
+		{
+
+			$stm = $this->pdo->prepare("SELECT CODCLIENT,TIPOCLIENT,NUMSERIE,GRANCONTRIB FROM Clientes");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+        catch (Throwable $t)//php7
+        {
+			die($t->getMessage());
+        }
+		catch(Exception $e)//php5
+		{
+			die($e->getMessage());
+		}
+	}
+
+
+
+
+
+
+
+
 	public function eliminarClienteProveedor($data){
 		
 		#echo $data->IDCLIENTE;

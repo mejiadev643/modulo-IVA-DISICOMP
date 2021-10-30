@@ -105,6 +105,7 @@ class ClienteProveedorController{
         require_once 'view/admin/navLateral.php';
         require_once 'view/admin/consultar-cliente-proveedor.php';
     }
+    
     public function ActualizarClienteProveedor(){
         $clienteproveedor = new ClienteProveedor();
         

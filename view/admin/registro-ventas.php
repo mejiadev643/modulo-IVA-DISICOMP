@@ -75,12 +75,12 @@ date_default_timezone_set("America/El_Salvador");
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 											<p class="text-condensedLight">Seleccione Cliente/Proveedor
-											<select class="custom-select" name="REGISTRO" required >
+											<select onchange=Verificar() id="ClienteP" class="custom-select" name="REGISTRO" required >
 												<option selected>Selección:</option>
 
 											<?php foreach($this->model3->listarClientesProveedores() as $cli): ?>		
 																	
-		         									<option value="<?php echo $cli->CODCLIENT; ?>"> <?php echo $cli->NOMBCLIENT; ?></option> 				
+		         									<option value="<?php echo $cli->CODCLIENT; ?>" > <?php echo $cli->NOMBCLIENT; ?></option> 				
 								
 											<?php endforeach; ?>
 
@@ -102,7 +102,7 @@ date_default_timezone_set("America/El_Salvador");
 											
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<label for="valor">Gran contribuyente: </label>
-												<i class="zmdi zmdi-circle-o" onclick=contrib() id="boton"></i>
+												<i class="zmdi zmdi-circle-o"  id="boton"></i>
 
 											</div>
 										</div><!--end of form left-->
@@ -186,26 +186,13 @@ date_default_timezone_set("America/El_Salvador");
 	<script type="text/javascript">
 		<?php 
 
-			$prov = $this->model3->listarClientesProveedores();
+			$prov = $this->model3->listarDatosClienProv();
 		?>
 
 		 var str = <?php echo json_encode($prov);  ?>;
-		 
-		 //console.log("saasd");
-		 //console.log(str[1].NOMBCLIENT);
-		 nombre = "pepito";
-		 
-		 for (i in str){
-		 
-		 	//console.log(str[i].NOMBCLIENT);
-		 	if (str[i].NOMBCLIENT == nombre){
-		  		console.log("se encontro a "+ str[i].NOMBCLIENT);
-		  	}else{
-		  		console.log("no se encontro");
-		  	}
 
-		 
-		 }
 	</script>
+	<script type="text/javascript" src="js/procesos.js"></script>
+
 </body>
 </html>
