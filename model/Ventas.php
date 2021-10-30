@@ -255,6 +255,25 @@ public function obtenerNombre($id){
 
 
 	}
+	public function ReporteVentaExcel()
+	{
+		try
+		{
+
+			$stm = $this->pdo->prepare("SELECT IDVENTA, TT,SUCURSAL, COMPRO, NOUNICO, FECHA, REGISTRO, SERIE,VALOR,IVA13,IVA1,IVA2,EXENTAS,FOVIAL,COTRAN,TOTAL,FECOPERA,USUARIO,FECHAOPE,MAQUINA,HORA FROM Venta");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+        catch (Throwable $t)//php7
+        {
+			die($t->getMessage());
+        }
+		catch(Exception $e)//php5
+		{
+			die($e->getMessage());
+		}
+	}
 
 }
 
