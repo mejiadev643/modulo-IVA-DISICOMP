@@ -111,5 +111,9 @@ class VentasController{
 
         header("Location:?c=Ventas&a=Consultar");
     }
+    public function GenerarReporteExcel(){
+        //llama todas las partes de la vista Consultar       
+        require_once 'view/admin/reporte.php';
+    }
 }
 ?>

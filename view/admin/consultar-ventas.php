@@ -12,6 +12,7 @@
 			</div>
 		</section>
 		<div class="mdl-tabs  mdl-js-ripple-effect">
+		<a href="?c=Ventas&a=GenerarReporteExcel" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Generar Reporte</a>
 			<div class="mdl-tabs__tab-bar">
             <a href="?c=Ventas&a=Crud" class="mdl-tabs__tab">Nuevo</a>
             <a href="?c=Ventas&a=Consultar" class="mdl-tabs__tab is-active">Listar</a>
