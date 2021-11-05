@@ -44,14 +44,12 @@
             </article>
 
             <article class="full-width tile">
-
-            <a href="?c=ClienteProveedor&a=Consultar">
-
+            <a href="?c=Empresa&a=Crud">
                 <div class="tile-text">
                     <span class="text-condensedLight">
-						<br>
-						<small>Empresa</small>
-					</span>
+                        <br>
+                        <small>Empresa</small>
+                    </span>
                 </div>
                 <i class="zmdi zmdi-balance tile-icon"></i>
             </a>
@@ -74,16 +72,6 @@
                     <i class="zmdi zmdi-card tile-icon"></i>
                 </a>
             </article>
-
-            <article class="full-width tile">
-                <div class="tile-text">
-                    <span class="text-condensedLight">
-						<br>
-						<small>Productos</small>
-					</span>
-                </div>
-                <i class="zmdi zmdi-washing-machine tile-icon"></i>
-            </article>
             <article class="full-width tile">
                 <a href="?c=Ventas&a=Consultar">
 
@@ -95,6 +83,15 @@
                     </div>
                     <i class="zmdi zmdi-shopping-cart tile-icon"></i>
                 </a>
+            </article>
+            <article class="full-width tile">
+                <div class="tile-text">
+                    <span class="text-condensedLight">
+                        <br>
+                        <small>Manuales</small>
+                    </span>
+                </div>
+                <i class="zmdi zmdi-washing-machine tile-icon"></i>
             </article>
         </section>
     </section>

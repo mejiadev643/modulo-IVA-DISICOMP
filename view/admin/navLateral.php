@@ -125,17 +125,8 @@
 							</li>
 						</ul>
 					</li>
-					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="#" class="full-width">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-washing-machine"></i>
-							</div>
-							<div class="navLateral-body-cr hide-on-tablet">
-								PRODUCTOS
-							</div>
-						</a>
-					</li>
+					
+					
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="?c=Ventas&a=Crud" class="full-width">
