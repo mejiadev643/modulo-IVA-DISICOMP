@@ -19,7 +19,7 @@ function Verificar(){
 		}else{
 			contador = 0;
 			console.log("No es gran contibuyente");
-
+			serie.value = "";
 			imprimevalor();
 		}	
 	}
