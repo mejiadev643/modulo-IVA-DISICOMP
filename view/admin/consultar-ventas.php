@@ -105,7 +105,7 @@
 			let Transaccion = document.querySelector("#tt"+id);
 			let sucursal = document.querySelector("#sucursal"+id);
 			let comprobante = document.querySelector("#compro"+id);
-			let formulario unico = document.querySelector("#nounico"+id);
+			let formulariounico = document.querySelector("#nounico"+id);
 			let fechadoc = document.querySelector("#fecha"+id);
 			let registro = document.querySelector("#registro"+id);
 			let serie = document.querySelector("#serie"+id);

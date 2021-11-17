@@ -164,7 +164,7 @@ public function ObtenerVentas($id){
 
 
 
-	public function eliminarVentas($sale){
+	public function eliminarVenta($sale){
 		
 		
 
