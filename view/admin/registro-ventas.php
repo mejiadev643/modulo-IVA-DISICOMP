@@ -9,7 +9,7 @@ date_default_timezone_set("America/El_Salvador");
 	<section class="full-width pageContent">
 		<section class="full-width header-well">
 			<div class="full-width header-well-icon">
-				<i class="zmdi zmdi-account"></i>
+				<i class="zmdi zmdi-shopping-cart"></i>
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
@@ -87,7 +87,7 @@ date_default_timezone_set("America/El_Salvador");
 											</select></p>
 										</div>
 
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<div>
 												<input class="mdl-textfield__input" type="text"  id="SERIE"  maxlength="13" name="SERIE"  pattern="-?[A-Za-záéíóúÁÉÍÓÚ0-9 ]*(\.[]+)?" title="Digite su numero de serie" required>
 												<label class="mdl-textfield__label" for="serie">Numero de Serie</label>
 												<span class="mdl-textfield__error">Numero de serie invalido</span>
